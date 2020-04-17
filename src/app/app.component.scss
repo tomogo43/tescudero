@@ -7,3 +7,7 @@ mat-sidenav {
     background-color: rgb(125, 125, 255);
     width: 200px;
 }
+
+mat-sidenav-container {
+    background-image:-webkit-linear-gradient(120deg, white, rgba(125, 125, 255, 0.616));
+}
