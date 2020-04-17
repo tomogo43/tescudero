@@ -8,6 +8,16 @@ import { ProjetsComponent } from './projets/projets.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { PostsComponent } from './posts/posts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import { SidenavService } from './services/sidenav.service';
+
+/* Sidenav */
+import {  MatSidenavModule} from '@angular/material/sidenav';
+/* tooltip */
+import { MatTooltipModule } from '@angular/material/tooltip';
+/* ripple */
+import { MatRipple, MatRippleModule } from '@angular/material/core'
 
 @NgModule({
   declarations: [
@@ -16,13 +26,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CurriculumVitaeComponent,
     ProjetsComponent,
     FourOhFourComponent,
-    PostsComponent
+    PostsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    FormsModule,
+    MatTooltipModule,
+    MatRippleModule
   ],
-  providers: [],
+  providers: [
+    SidenavService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
