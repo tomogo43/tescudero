@@ -11,13 +11,31 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { SidenavService } from './services/sidenav.service';
+import { RouterModule, Routes } from '@angular/router';
+import { PositionService } from './services/position.service';
+
+/* Font awesome */
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 /* Sidenav */
 import {  MatSidenavModule} from '@angular/material/sidenav';
 /* tooltip */
 import { MatTooltipModule } from '@angular/material/tooltip';
 /* ripple */
-import { MatRipple, MatRippleModule } from '@angular/material/core'
+import { MatRippleModule } from '@angular/material/core';
+import { SideComponent } from './side/side.component';
+import { ContactComponent } from './contact/contact.component'
+
+const appRoutes : Routes = [
+  { path : 'home', component: HomeComponent },
+  { path : 'cv', component: CurriculumVitaeComponent },
+  { path : 'projects', component: ProjetsComponent },
+  { path : 'posts', component: PostsComponent },
+  { path : 'contact', component: ContactComponent },
+  { path : '', component: HomeComponent },
+  { path : 'not-found', component: FourOhFourComponent },
+  { path : '**', redirectTo: 'not-found' }
+]
 
 @NgModule({
   declarations: [
@@ -27,7 +45,9 @@ import { MatRipple, MatRippleModule } from '@angular/material/core'
     ProjetsComponent,
     FourOhFourComponent,
     PostsComponent,
-    HeaderComponent
+    HeaderComponent,
+    SideComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -35,10 +55,13 @@ import { MatRipple, MatRippleModule } from '@angular/material/core'
     MatSidenavModule,
     FormsModule,
     MatTooltipModule,
-    MatRippleModule
+    MatRippleModule,
+    FontAwesomeModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    SidenavService
+    SidenavService,
+    PositionService
   ],
   bootstrap: [AppComponent]
 })

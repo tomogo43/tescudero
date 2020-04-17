@@ -1,0 +1,32 @@
+.titre_menu {
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.selection {
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.onSelection {
+    color: white;
+}
+
+.selection:hover {
+    color: white;
+}
+
+.disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}

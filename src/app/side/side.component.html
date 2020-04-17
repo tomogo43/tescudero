@@ -1,0 +1,27 @@
+<div class="titre_menu disable-select">Menu</div><br/>
+<div style="border-bottom: 2px solid black;"></div>
+<div [ngClass]="{'selection disable-select': true,
+                 'onSelection': position === '/home' || position ==='/' }" (click)="changeComponent('home')" matRipple>
+    <fa-icon [icon]="faHome"></fa-icon>
+    Accueil
+</div>
+<div [ngClass]="{'selection disable-select': true,
+                'onSelection': position === '/cv'}" (click)="changeComponent('cv')" matRipple>
+    <fa-icon [icon]="faUser"></fa-icon>
+    Curriculum-viatae
+</div>
+<div [ngClass]="{'selection disable-select': true,
+                'onSelection': position === '/projects'}" (click)="changeComponent('projects')" matRipple>
+    <fa-icon [icon]="faPuzzlePiece"></fa-icon>
+    Mes projets
+</div>
+<div [ngClass]="{'selection disable-select': true,
+                'onSelection': position === '/posts'}" (click)="changeComponent('posts')" matRipple>
+    <fa-icon [icon]="faPen"></fa-icon>
+    Mes posts
+</div>
+<div [ngClass]="{'selection disable-select': true,
+                'onSelection': position === '/contact'}" (click)="changeComponent('contact')" matRipple>
+    <fa-icon [icon]="faEnvelope"></fa-icon>
+    Me contacter
+</div>

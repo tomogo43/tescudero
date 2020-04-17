@@ -1,6 +1,9 @@
 <mat-sidenav-container>
-  <mat-sidenav [(opened)]="opened">Sidenav</mat-sidenav>
+  <mat-sidenav [(opened)]="opened">
+    <app-side></app-side>
+  </mat-sidenav>
   <mat-sidenav-content>
     <app-header></app-header><br/>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
