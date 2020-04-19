@@ -23,8 +23,12 @@ import {  MatSidenavModule} from '@angular/material/sidenav';
 import { MatTooltipModule } from '@angular/material/tooltip';
 /* ripple */
 import { MatRippleModule } from '@angular/material/core';
+/* MatCard */
+import { MatCardModule } from '@angular/material/card';
+
 import { SideComponent } from './side/side.component';
-import { ContactComponent } from './contact/contact.component'
+import { ContactComponent } from './contact/contact.component';
+
 
 const appRoutes : Routes = [
   { path : 'home', component: HomeComponent },
@@ -36,6 +40,7 @@ const appRoutes : Routes = [
   { path : 'not-found', component: FourOhFourComponent },
   { path : '**', redirectTo: 'not-found' }
 ]
+
 
 @NgModule({
   declarations: [
@@ -57,6 +62,7 @@ const appRoutes : Routes = [
     MatTooltipModule,
     MatRippleModule,
     FontAwesomeModule,
+    MatCardModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

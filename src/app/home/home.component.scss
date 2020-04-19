@@ -7,14 +7,15 @@
     padding: 5px 5px 5px 5px;
     box-shadow: 10px 5px 5px grey;
     font-size: 16px;
+    font-size: 18px;
 }
 
 .reseaux {
     border: 2px solid rgb(179, 177, 177);
-    width: 85%;
+    width: 90%;
     height: 100%;
-    margin-left: 7.5%;
-    margin-right: 7.5%;
+    margin-left: 5%;
+    margin-right: 15%;
     box-shadow: 10px 5px 5px grey;
 }
 
@@ -60,7 +61,6 @@
     margin-top: 20px;
     font-size: 20px;
     height: auto;
-    max-width: 80%;
 }
 
 .fonctionnement {
@@ -84,14 +84,20 @@
 }
 
 h2 {
-    color: rgb(49, 66, 216);
+    //color: rgb(49, 66, 216);
+    color: rgb(51, 193, 91);
+    font-size: 28px;
 }
+
 
 #photo_profil {
     cursor: pointer; 
     width: 150px; 
     height: auto; 
-    rotate: 90deg;
+    transform: rotate(90deg);
+    //rotate: 90deg;
+    float: left;
+    margin: 5px 5px 5px 5px;
 }
 
 #photo_profil:hover {
@@ -100,15 +106,29 @@ h2 {
 }
 
 #text_pres {
-    margin-left: 40px;
+    margin-left: 5px;
     margin-right: 5px;
+}
+
+.bandeau_strava {
+    width: 100%;
+    margin-left: 0;
+    //height: 100%;
+    //margin-left: 5px;
+    background-image: url("http://tescudero.fr/images/run3.jpg");
+    opacity: 0.4;
+    background-size: 100%;
+}
+
+.bandeau_strava:hover {
+    opacity: 0.6;
+    transition: 1s;
 }
 
 @media only screen and (max-width : 960px) {
     /* Styles */
     .link {
         text-align: center;
-        margin-left: 7%;
     }
     
     .contenu-reseau {
@@ -132,17 +152,24 @@ h2 {
     }
     
     #photo_profil {
-        width: 400px;
-        margin-top: 60px;
-        margin-bottom: 60px;
+        width: 150px;
+        margin-left: -20px;
+        margin-bottom: 8%;
+        margin-top: 20px;
     }
+    
 
     .presentation {
         font-size: 18px;
     }
 
     #text_pres {
-        margin-left: 5px;
+        margin-left: 0px;
         margin-right: 5px;
     }
+
+    h2 {
+        text-align: center;
+    }
 }
+
