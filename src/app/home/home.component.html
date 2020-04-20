@@ -12,7 +12,8 @@
                     
                 <!-- </div> -->
                 <!-- <div class="col-lg-10"> -->
-                    <p id="text_pres"><a target="_blank" href="http://tescudero.fr/images/photo_individuelle"><img id="photo_profil" src="http://tescudero.fr/images/photo_individuelle.jpg"></a>Diplômé d'un DUT en réseaux et télécommunications de l'<a target="_blank" href="https://iut-roanne.univ-st-etienne.fr/fr/index.html">IUT de Roanne</a> (2017-2019),
+                    <div style="width: 100%; text-align: center; position: relative;"><div class="cadre_photo"></div></div><br/>
+                    <p id="text_pres">Diplômé d'un DUT en réseaux et télécommunications de l'<a target="_blank" href="https://iut-roanne.univ-st-etienne.fr/fr/index.html">IUT de Roanne</a> (2017-2019),
                         J'ai intégré en septembre 2019 l'<a target="_blank" href="http://www.enseeiht.fr/fr/index.html">ENSEEIHT</a> en sciences du numérique à Toulouse afin d'enrichir
                         mes compétences sur les nouvelles technologies de l'information et de la communication.
                         En parallèle à mes études, je suis en alternance chez <a target="_blank" href="https://chausson-materiaux.fr">Chausson matériaux</a> (grande entreprise
@@ -26,7 +27,64 @@
     </div>
     <div class="col-lg-4 contenu-reseau">
         <div class="reseaux">
-            <div style="text-align: center;"><h2>Où me trouver ?</h2></div>
+            <div style="height: 100%; width: 100%">
+                <div class="cadre_reseaux">
+                    <div style="text-align: center;padding-top: 30px;"><h2>Où me trouver ?</h2></div>
+                </div>
+                <div class="cadre_reseaux cadre_reseaux_twitter">
+                    <div class="row">
+                        <div class="col-lg-2 contenu-icon" 
+                            [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
+                            matRipple [matRippleRadius]="60" 
+                            [matRippleUnbounded]="true">
+                            <a target="_blank" href="https://twitter.com/tomogo_43"><i class="fab fa-twitter icon icon-twitter"></i></a>
+                        </div>
+                        <div class="col-lg-10 link disable-select">
+                            Mon actu sur twitter
+                        </div>
+                    </div>
+                </div>
+                <div class="cadre_reseaux cadre_reseaux_github">
+                    <div class="row">
+                        <div class="contenu-icon col-lg-2" 
+                            [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
+                            matRipple [matRippleRadius]="60" 
+                            [matRippleUnbounded]="true">
+                            <a target="_blank" href="https://github.com/tomogo43"><i class="fab fa-github icon icon-github"></i></a>
+                        </div>
+                        <div class="col-lg-10 link disable-select">
+                            Mes projets sur github
+                        </div>
+                    </div>
+                </div>
+                <div class="cadre_reseaux cadre_reseaux_linkedin">
+                    <div class="row">
+                        <div class="contenu-icon col-lg-2" 
+                        [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
+                        matRipple [matRippleRadius]="60" 
+                        [matRippleUnbounded]="true">
+                        <a target="_blank" href="https://www.linkedin.com/in/thomas-escudero/"><i class="fab fa-linkedin icon icon-linkedin"></i></a>
+                        </div>
+                        <div class="col-lg-8 link disable-select">
+                                Mon profil linkedin                    
+                        </div>
+                    </div>
+                </div>
+                <div class="cadre_reseaux cadre_reseaux_strava">
+                    <div class="row">
+                        <div class="contenu-icon col-lg-2" 
+                            [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
+                            matRipple [matRippleRadius]="60" 
+                            [matRippleUnbounded]="true">
+                            <a target="_blank" href="https://www.strava.com/athletes/32084229"><i class="fab fa-strava icon icon-strava"></i></a>
+                        </div>
+                        <div class="col-lg-8 link disable-select">
+                            Mes sorties sur strava
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div style="text-align: center;"><h2>Où me trouver ?</h2></div>
             <div class="row">
                 <div class="col-lg-2 contenu-icon" 
                     [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
@@ -70,7 +128,7 @@
                 <div class="col-lg-8 link">
                     Mes sorties sur strava
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
