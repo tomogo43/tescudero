@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,7 +14,6 @@ export class AppComponent implements OnInit, OnDestroy {
   // variable qui défini quand il faut ouvrir le sidenav
   opened = false;
   title = 'tescudero';
-
 
   openSubscription: Subscription;
 
@@ -28,6 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
     );
     this.sidenavService.emitOpened();
   }
+
 
   ngOnDestroy() {
     this.openSubscription.unsubscribe();

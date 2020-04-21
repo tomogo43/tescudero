@@ -1,12 +1,14 @@
 <div class="row">
     <div class="col-lg-8">
         <div class="presentation">
-            <h2>A propos de tescudero.fr</h2>
+            <h2 *ngIf="langue === 'FR'">A propos de tescudero.fr</h2>
+            <h2 *ngIf="langue === 'EN'">About tescudero.fr</h2>
             <p><strong style="cursor: pointer;">tescudero.fr</strong> est une web app générée avec <a target="_blank" href="https://cli.angular.io/">Angular CLI </a> 9.1.1 (dernière version en date au jour du développement).
                 J'ai décidé de concevoir tescudero.fr afin de partager mes expériences et mes projets et ainsi pouvoir mettre
                 en pratique mes compétences en développement web.
             </p>
-            <h2>A propos de moi</h2>
+            <h2 *ngIf="langue === 'FR'">A propos de moi</h2>
+            <h2 *ngIf="langue === 'EN'">About me</h2>
            
             <div style="width: 100%; text-align: center; position: relative;">
                 <mat-progress-spinner

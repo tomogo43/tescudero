@@ -27,9 +27,12 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 /* MatProgressSpinner */
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+/* MatProgressBar */
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { SideComponent } from './side/side.component';
 import { ContactComponent } from './contact/contact.component';
+import { LangueService } from './services/langue.service';
 
 
 const appRoutes : Routes = [
@@ -66,11 +69,13 @@ const appRoutes : Routes = [
     FontAwesomeModule,
     MatCardModule,
     MatProgressSpinnerModule,
+    MatProgressBarModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
     SidenavService,
-    PositionService
+    PositionService,
+    LangueService
   ],
   bootstrap: [AppComponent]
 })
