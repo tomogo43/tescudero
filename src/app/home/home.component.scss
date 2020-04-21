@@ -30,7 +30,7 @@
 .contenu-icon {
     width: 100%;
     text-align: center;
-    margin-top: 15px;
+    padding-right: 20px;
 }
 
 .icon {
@@ -63,7 +63,6 @@
     margin-top: 20px;
     font-size: 20px;
     height: auto;
-    margin-top: 35px;
     color: rgb(255, 255, 255);
 }
 
@@ -117,28 +116,19 @@ h2 {
 .bandeau_strava {
     width: 100%;
     margin-left: 0;
-    //height: 100%;
-    //margin-left: 5px;
-    //background-image: url("http://tescudero.fr/images/run3.jpg");
-    // opacity: 0.7;
-    //background-size: 100%;
 }
 
 
 
 .cadre_photo {
-    width: 200px;
-    height: 200px;
-    background-image: url("http://tescudero.fr/images/photo_individuelle.jpg") ;
-    transform: rotate(90deg);
-    background-size: 250px 250px;
-    background-position: center;
-    border-radius: 400px;
-    border: 2px solid rgb(51, 193, 91);
-    margin-right: 50%;
-    margin: 0 auto;
+    min-height: 200px; 
+    image-rendering: optimizeQuality; 
+    width: 50%;
+    height: auto;
+    border-radius: 10%; 
+    border: 2px solid green;
     cursor: pointer;
-    transform: scale(1) rotate(90deg);
+    transform: scale(1);
     transition: 1s;
 }
 
@@ -146,6 +136,7 @@ h2 {
     height: 20%; 
     width: 100%; 
     min-height: 100px;
+    position: relative;
 }
 
 .cadre_reseaux_strava {
@@ -156,6 +147,7 @@ h2 {
     transition: 1s;    
     border-top: 1px solid black;
 }
+
 
 .cadre_reseaux_strava:hover {
     opacity: 1;
@@ -204,8 +196,14 @@ h2 {
 }
 
 .cadre_photo:hover {
-    transform: scale(1.2) rotate(90deg);
+    transform: scale(1.1); //rotate(90deg);
     transition: 1s;  
+}
+
+
+.contenu_icon_text {
+    position: absolute;
+    bottom: 0;
 }
 
 .disable-select {
@@ -222,6 +220,15 @@ h2 {
     .link {
         text-align: center;
         margin-top: 0;
+        margin-left: 0px;
+    }
+
+    .cadre_photo {
+        width: 90%;
+    }
+
+    .contenu_icon_text {
+        position: relative;
     }
 
     .contenu-reseau {

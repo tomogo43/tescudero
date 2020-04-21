@@ -25,6 +25,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRippleModule } from '@angular/material/core';
 /* MatCard */
 import { MatCardModule } from '@angular/material/card';
+/* MatProgressSpinner */
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { SideComponent } from './side/side.component';
 import { ContactComponent } from './contact/contact.component';
@@ -63,6 +65,7 @@ const appRoutes : Routes = [
     MatRippleModule,
     FontAwesomeModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

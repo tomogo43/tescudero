@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  loading: boolean=true;
+
   constructor() { }
+
+  // vérifie si la photo est chargée
+  onLoad() {
+    this.loading = false;
+  }
 
   ngOnInit(): void {
   }
