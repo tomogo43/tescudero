@@ -3,7 +3,10 @@
 <div [ngClass]="{'selection disable-select': true,
                  'onSelection': position === '/home' || position ==='/' }" (click)="changeComponent('home')" matRipple>
     <fa-icon [icon]="faHome"></fa-icon>
-    Accueil
+    <!-- Français -->
+    <span *ngIf="langue === 'FR'"> Accueil </span>
+    <!-- Anglais -->
+    <span *ngIf="langue === 'EN'"> Home </span>
 </div>
 <div [ngClass]="{'selection disable-select': true,
                 'onSelection': position === '/cv'}" (click)="changeComponent('cv')" matRipple>
@@ -13,15 +16,24 @@
 <div [ngClass]="{'selection disable-select': true,
                 'onSelection': position === '/projects'}" (click)="changeComponent('projects')" matRipple>
     <fa-icon [icon]="faPuzzlePiece"></fa-icon>
-    Mes projets
+    <!-- Français -->
+    <span *ngIf="langue === 'FR'"> Projets </span>
+    <!-- Anglais -->
+    <span *ngIf="langue === 'EN'"> My projects </span>
 </div>
 <div [ngClass]="{'selection disable-select': true,
                 'onSelection': position === '/posts'}" (click)="changeComponent('posts')" matRipple>
     <fa-icon [icon]="faPen"></fa-icon>
-    Mes posts
+    <!-- Français -->
+    <span *ngIf="langue === 'FR'"> Mes posts </span>
+    <!-- Anglais -->
+    <span *ngIf="langue === 'EN'"> Posts </span>
 </div>
 <div [ngClass]="{'selection disable-select': true,
                 'onSelection': position === '/contact'}" (click)="changeComponent('contact')" matRipple>
     <fa-icon [icon]="faEnvelope"></fa-icon>
-    Me contacter
+    <!-- Français -->
+    <span *ngIf="langue === 'FR'"> Me contacter </span>
+    <!-- Anglais -->
+    <span *ngIf="langue === 'EN'"> Contact me </span>
 </div>

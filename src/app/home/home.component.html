@@ -1,11 +1,19 @@
 <div class="row">
     <div class="col-lg-8">
         <div class="presentation">
+            <!-- Français -->
             <h2 *ngIf="langue === 'FR'">A propos de tescudero.fr</h2>
+            <!-- Anglais -->
             <h2 *ngIf="langue === 'EN'">About tescudero.fr</h2>
-            <p><strong style="cursor: pointer;">tescudero.fr</strong> est une web app générée avec <a target="_blank" href="https://cli.angular.io/">Angular CLI </a> 9.1.1 (dernière version en date au jour du développement).
-                J'ai décidé de concevoir tescudero.fr afin de partager mes expériences et mes projets et ainsi pouvoir mettre
+            <!-- Français -->
+            <p  *ngIf="langue === 'FR'"><strong style="color: rgb(49, 66, 216);">tescudero.fr</strong> est une web app générée avec <a target="_blank" href="https://cli.angular.io/">Angular CLI </a> 9.1.1 (dernière version en date au jour du développement).
+                J'ai décidé de concevoir <strong style="color: rgb(49, 66, 216);">tescudero.fr</strong> afin de partager mes expériences et mes projets et ainsi pouvoir mettre
                 en pratique mes compétences en développement web.
+            </p>
+            <!-- Anglais -->
+            <p *ngIf="langue === 'EN'"><strong style="color: rgb(49, 66, 216);">tescudero.fr</strong> is a web app powered by <a target="_blank" href="https://cli.angular.io/">Angular CLI </a> 9.1.1 (latest version at the beginning of this project).
+                I had the idea to build <strong style="color: rgb(49, 66, 216);">tescudero.fr</strong> in the goal to share my experiences, my projects and also
+                to involve my programming skills.
             </p>
             <h2 *ngIf="langue === 'FR'">A propos de moi</h2>
             <h2 *ngIf="langue === 'EN'">About me</h2>
@@ -20,7 +28,8 @@
                 <img [hidden]="loading" class="disable-select cadre_photo" (load)="onLoad()" src="http://tescudero.fr/images/profil.JPG">
 		
             </div><br/> 
-            <p id="text_pres">Diplômé d'un DUT en réseaux et télécommunications de l'<a target="_blank" href="https://iut-roanne.univ-st-etienne.fr/fr/index.html">IUT de Roanne</a> (2017-2019),
+            <!-- Français -->
+            <p  *ngIf="langue === 'FR'" id="text_pres">Diplômé d'un DUT en réseaux et télécommunications de l'<a target="_blank" href="https://iut-roanne.univ-st-etienne.fr/fr/index.html">IUT de Roanne</a> (2017-2019),
                 J'ai intégré en septembre 2019 l'<a target="_blank" href="http://www.enseeiht.fr/fr/index.html">ENSEEIHT</a> en sciences du numérique à Toulouse afin d'enrichir
                 mes compétences sur les nouvelles technologies de l'information et de la communication.
                 En parallèle à mes études, je suis en alternance chez <a target="_blank" href="https://chausson-materiaux.fr">Chausson matériaux</a> (grande entreprise
@@ -28,15 +37,34 @@
                 une équipe de 8 développeurs et sous la responsabilité d'un chef de projet, je participe au développement et au maintien
                 des applications métiers sur système i (CL, RPG IV, free).
             </p>
+            <!-- Anglais -->
+            <p  *ngIf="langue === 'EN'" id="text_pres">I'm graduated by a two years of technical degree in Network and Telecommunications of <a target="_blank" href="https://iut-roanne.univ-st-etienne.fr/fr/index.html">IUT de Roanne</a> (2017-2019).<br/>
+                Since september 2019, I'm following IT courses at <a target="_blank" href="http://www.enseeiht.fr/fr/index.html">ENSEEIHT</a> in the aim to discover more about 
+                new technologies.
+                Morever, I realise my apprenticeship at <a target="_blank" href="https://chausson-materiaux.fr">Chausson matériaux</a> (huge french company in distribution
+                and retail of materials) like IBMi developper. I'm working in a crew of height developpers and one project manager, my main
+                missions are to develop applications and troubleshooting old applications on systeme i (CL, RPG IV, free).
+            </p>
         </div>
     </div>
     <div class="col-lg-4 contenu-reseau">
         <div class="reseaux">
             <div style="height: 100%; width: 100%">
                 <div class="cadre_reseaux">
-                    <div style="text-align: center;padding-top: 30px;"><h2>Où me trouver ?</h2></div>
+                    <!-- Français -->
+                    <div  *ngIf="langue === 'FR'" style="text-align: center;padding-top: 30px;"><h2>Où me trouver ?</h2></div>
+                    <!-- Anglais -->
+                    <div  *ngIf="langue === 'EN'" style="text-align: center;padding-top: 30px;"><h2>Where find me ?</h2></div>
                 </div>
-                <div class="cadre_reseaux cadre_reseaux_twitter">
+                <mat-progress-spinner
+                    [color]="'primary'"
+                    [mode]="'indeterminate'"
+                    [value]="'50'" *ngIf="loadingTwitter" style="margin: 0 auto">
+                </mat-progress-spinner>
+                <!-- Check si l'image est chargée -->
+                <img (load)="onLoadTwitter()" [hidden]="true" src="http://tescudero.fr/images/earth.jpg">
+                <!-- Une fois chargée affiche la div -->
+                <div [hidden]="loadingTwitter" class="cadre_reseaux cadre_reseaux_twitter">
                     <div class="row contenu_icon_text">
                         <div class="col-lg-2 contenu-icon" 
                             [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
@@ -44,12 +72,25 @@
                             [matRippleUnbounded]="true">
                             <a target="_blank" href="https://twitter.com/tomogo_43"><i class="fab fa-twitter icon icon-twitter"></i></a>
                         </div>
-                        <div class="col-lg-10 link disable-select">
-                            Mon actu sur twitter
+                        <!-- Français -->
+                        <div  *ngIf="langue === 'FR'" class="col-lg-10 link disable-select">
+                            Mon actu sur Twitter
+                        </div>
+                        <!-- Anglais -->
+                        <div  *ngIf="langue === 'EN'" class="col-lg-10 link disable-select">
+                            My Twitter account
                         </div>
                     </div>
                 </div>
-                <div class="cadre_reseaux cadre_reseaux_github">
+                <mat-progress-spinner
+                    [color]="'primary'"
+                    [mode]="'indeterminate'"
+                    [value]="'50'" *ngIf="loadingGithub" style="margin: 0 auto">
+                </mat-progress-spinner>
+                <!-- Check si l'image est chargée -->
+                <img (load)="onLoadGithub()" [hidden]="true" src="http://tescudero.fr/images/programming.png">
+                <!-- Une fois chargée affiche la div -->
+                <div [hidden]="loadingGithub" class="cadre_reseaux cadre_reseaux_github">
                     <div class="row contenu_icon_text">
                         <div class="contenu-icon col-lg-2" 
                             [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
@@ -57,12 +98,25 @@
                             [matRippleUnbounded]="true">
                             <a target="_blank" href="https://github.com/tomogo43"><i class="fab fa-github icon icon-github"></i></a>
                         </div>
-                        <div class="col-lg-10 link disable-select">
-                            Mes projets sur github
+                        <!-- Français -->
+                        <div *ngIf="langue === 'FR'" class="col-lg-10 link disable-select">
+                            Mes projets sur Github
+                        </div>
+                        <!-- Anglais -->
+                        <div *ngIf="langue === 'EN'" class="col-lg-10 link disable-select">
+                            My projects on Github
                         </div>
                     </div>
                 </div>
-                <div class="cadre_reseaux cadre_reseaux_linkedin">
+                <mat-progress-spinner
+                    [color]="'primary'"
+                    [mode]="'indeterminate'"
+                    [value]="'50'" *ngIf="loadingLinkedin" style="margin: 0 auto">
+                </mat-progress-spinner>
+                <!-- Check si l'image est chargée -->
+                <img (load)="onLoadLinkedin()" [hidden]="true" src="http://tescudero.fr/images/network.png">
+                <!-- Une fois chargée affiche la div -->
+                <div [hidden]="loadingLinkedin" class="cadre_reseaux cadre_reseaux_linkedin">
                     <div class="row contenu_icon_text">
                         <div class="contenu-icon col-lg-2" 
                         [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
@@ -70,12 +124,25 @@
                         [matRippleUnbounded]="true">
                         <a target="_blank" href="https://www.linkedin.com/in/thomas-escudero/"><i class="fab fa-linkedin icon icon-linkedin"></i></a>
                         </div>
-                        <div class="col-lg-10 link disable-select">
-                                Mon profil linkedin                    
+                        <!-- Français -->
+                        <div *ngIf="langue === 'FR'" class="col-lg-10 link disable-select">
+                                Mon profil Linkedin                    
+                        </div>
+                        <!-- Anglais -->
+                        <div *ngIf="langue === 'EN'" class="col-lg-10 link disable-select">
+                                My Linkedin account               
                         </div>
                     </div>
                 </div>
-                <div class="cadre_reseaux cadre_reseaux_strava">
+                <mat-progress-spinner
+                    [color]="'primary'"
+                    [mode]="'indeterminate'"
+                    [value]="'50'" *ngIf="loadingStrava" style="margin: 0 auto">
+                </mat-progress-spinner>
+                <!-- Check si l'image est chargée -->
+                <img (load)="onLoadStrava()" [hidden]="true" src="http://tescudero.fr/images/network.png">
+                <!-- Une fois chargée affiche la div -->
+                <div [hidden]="loadingStrava" class="cadre_reseaux cadre_reseaux_strava">
                     <div class="row contenu_icon_text">
                         <div class="contenu-icon col-lg-2" 
                             [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
@@ -83,8 +150,13 @@
                             [matRippleUnbounded]="true">
                             <a target="_blank" href="https://www.strava.com/athletes/32084229"><i class="fab fa-strava icon icon-strava"></i></a>
                         </div>
-                        <div class="col-lg-10 link disable-select">
-                            Mes sorties sur strava
+                        <!-- Français -->
+                        <div *ngIf="langue === 'FR'" class="col-lg-10 link disable-select">
+                            Mes sorties sur Strava
+                        </div> 
+                        <!-- Anglais -->
+                        <div *ngIf="langue === 'EN'" class="col-lg-10 link disable-select">
+                            My activities on Strava
                         </div>
                     </div>
                 </div>
@@ -94,16 +166,28 @@
 </div>
 <div class="row">
     <div class="fonctionnement">
-        <h2>Fonctionnement du site <i class="fas fa-tools"></i></h2>
-        <i class="fas fa-arrow-circle-right fleches"></i> Appuyez sur le triangle blanc en haut à gauche de la page
-        pour afficher le menu de l'application.
+        <!-- Français -->
+        <h2 *ngIf="langue === 'FR'">Fonctionnement du site <i class="fas fa-tools"></i></h2>
+        <span *ngIf="langue === 'FR'"><i class="fas fa-arrow-circle-right fleches"></i> Appuyez sur le triangle blanc en haut à gauche de la page
+        pour afficher le menu de l'application.</span>
+        <!-- Anglais -->
+        <h2 *ngIf="langue === 'EN'">How to use this website <i class="fas fa-tools"></i></h2>
+        <span *ngIf="langue === 'EN'"><i class="fas fa-arrow-circle-right fleches"></i> Just click on the white triangle shape at the top to discover
+        the menu.</span>
         <br/><br/>
-        <i class="fas fa-arrow-circle-right fleches"></i> Sélectionnez un item pour accéder à la page souhaitée.
+        <!-- Français -->
+        <span *ngIf="langue === 'FR'"><i class="fas fa-arrow-circle-right fleches"></i> Sélectionnez un item pour accéder à la page souhaitée.</span>
+        <!-- Anglais -->
+        <span *ngIf="langue === 'EN'"><i class="fas fa-arrow-circle-right fleches"></i> Choose a link to reach an other section</span>
+        
     </div>
 </div>
 <div class="row">
     <div class="fonctionnement">
-        <h2>Dernières informations <i class="fas fa-info"></i></h2>
+        <!-- Français -->
+        <h2 *ngIf="langue === 'FR'">Dernières informations <i class="fas fa-info"></i></h2>
+        <!-- Anglais -->
+        <h2 *ngIf="langue === 'EN'">Latest news <i class="fas fa-info"></i></h2>
         <p style="color: rgb(143, 132, 132);">version 1.1 (release 18/04/2020)</p>
     </div>
 </div>

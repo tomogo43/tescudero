@@ -11,12 +11,17 @@ export class LangueService {
     changeLangue(langue) {
         console.log(langue);
         this.langue = langue;
+        sessionStorage.setItem("langue",langue);
         this.emitLangue();
     }
 
     // émet dans toute l'appli la langue de l'application
     emitLangue() {
-        this.langueSubject.next(this.langue);
+        if(sessionStorage.getItem("langue")!=null){
+            this.langueSubject.next(sessionStorage.getItem("langue"));
+        } else {
+            this.langueSubject.next(this.langue);
+        }
     }
     
 }

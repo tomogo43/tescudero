@@ -1,1 +1,10 @@
-<p>four-oh-four works!</p>
+<div class="container-fluid disable-select" style="text-align: center;">
+    <p style="font-size: 24px; color: rgb(51, 193, 91);">
+        <!-- Français -->
+        <span *ngIf="langue === 'FR'">La page est introuvable revenir au </span>
+        <span *ngIf="langue === 'FR'" (click)="goHome()" id="retour">menu</span>
+        <!-- Anglais -->
+        <span *ngIf="langue === 'EN'">Sorry, this page isn't available, go to </span>
+        <span *ngIf="langue === 'EN'" (click)="goHome()" id="retour">home</span></p>
+    <img style="max-height: 90%; width: 90%; margin: 5% 5% 5% 5%;" src="http://tescudero.fr/images/undraw_not_found_60pq.svg">
+</div>
