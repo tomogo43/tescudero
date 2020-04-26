@@ -1,17 +1,52 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
+import { LangueService } from '../services/langue.service';
+import { Subscription } from 'rxjs';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-curriculum-vitae',
   templateUrl: './curriculum-vitae.component.html',
   styleUrls: ['./curriculum-vitae.component.scss']
 })
-export class CurriculumVitaeComponent implements OnInit {
+export class CurriculumVitaeComponent implements OnInit, OnDestroy {
 
-  constructor(private matDialog: MatDialog) { }
+  dateTomorow = new Date(Date.now());
+  october = new Date('2019/10/07');
+  diff: string;
+  langue = 'FR';
+  langueSubscription: Subscription
+  
+  
+
+  constructor(private matDialog: MatDialog,
+              private langueService: LangueService) {
+    
+   }
 
   ngOnInit(): void {
+    this.langueSubscription = this.langueService.langueSubject.subscribe(
+      (value) => {
+        this.langue = value;
+
+        // si langue français
+        if (this.langue === 'FR') {
+          moment.locale('fr');
+        } else if (this.langue === 'EN') {
+          moment.locale('en');
+        }
+
+        // calcula la difference de date
+        this.DateDifference();
+      }
+    );
+    this.langueService.emitLangue();
+  }
+
+  DateDifference(): void {
+    this.diff = moment("20191007", "YYYYMMDD").fromNow();
+
   }
 
   /* Ouvre un dialog */
@@ -31,6 +66,10 @@ export class CurriculumVitaeComponent implements OnInit {
         console.log(result);
       }
     )
+  }
+
+  ngOnDestroy() {
+    this.langueSubscription.unsubscribe();
   }
 
 }
