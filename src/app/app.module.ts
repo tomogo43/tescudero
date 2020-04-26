@@ -29,10 +29,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 /* MatProgressBar */
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+/* Divider */
+import { MatDividerModule } from '@angular/material/divider';
+/* DIalog */
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { SideComponent } from './side/side.component';
 import { ContactComponent } from './contact/contact.component';
 import { LangueService } from './services/langue.service';
+import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
 
 
 const appRoutes : Routes = [
@@ -57,7 +62,8 @@ const appRoutes : Routes = [
     PostsComponent,
     HeaderComponent,
     SideComponent,
-    ContactComponent
+    ContactComponent,
+    DialogOverviewComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +76,8 @@ const appRoutes : Routes = [
     MatCardModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatDividerModule,
+    MatDialogModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
