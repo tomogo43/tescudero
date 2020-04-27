@@ -1,10 +1,39 @@
 h2 {
     color: rgb(51, 193, 91);
+    font-size: 24px;
     margin-left: 30px;
 }
 
 #chausson {
     background-image: url("http://tescudero.fr/images/chausson-materiaux.png");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+#mairie {
+    background-image: url("http://tescudero.fr/images/mairie.png");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+#asti {
+    background-image: url("http://tescudero.fr/images/asti.png");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+#numesis {
+    background-image: url("http://tescudero.fr/images/numesis.jpg");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+#enseeiht {
+    background-image: url("http://tescudero.fr/images/enseeiht.jpg");
     background-size: cover;
     background-position: center;
     cursor: pointer;

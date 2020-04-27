@@ -19,6 +19,7 @@ export class DialogOverviewComponent implements OnInit, AfterViewInit {
 
   place: string;
   content: string;
+  link: string;
 
   
 
@@ -26,6 +27,7 @@ export class DialogOverviewComponent implements OnInit, AfterViewInit {
   @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     this.place = data.place;
     this.content = data.content;
+    this.link = data.link;
 
     // lattitude et longitude
     this.lat = data.lat;

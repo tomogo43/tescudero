@@ -2,7 +2,7 @@
 export class DialogData {
     place: string;
     content: string;
-    image: string;
+    link: string;
     lat: number;
     lng: number
 }

@@ -1,14 +1,49 @@
-<h2>Mes expériences professionnelles</h2>
-<span style="color: grey;"><li style="margin-left: 35px;">octobre 2019 - Aujourd'hui ({{ diff }})</li></span><br/>
-<mat-card>
+<div class="container-fluid">  
+  <!-- *******************************************Expériences professionnelles*************************************** -->
+  <h2 #exp>Mes expériences professionnelles
+    <mat-divider></mat-divider>
+  </h2>
+
+  <!-- Chausson matériaux -->
+  <span style="color: grey;"><li style="margin-left: 35px;">octobre 2019 - Aujourd'hui ({{ diff }})</li></span><br/>
+  <mat-card>
+      <mat-card-header>
+          <div mat-card-avatar id="chausson" (click)="openDialog('Chausson matériaux')"
+              matRipple 
+              [matRippleUnbounded]="true"
+              [matRippleRadius]="60"
+              [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
+          <mat-card-title style="color: rgb(49, 66, 216);">Développeur IBMi en alternance</mat-card-title>
+          <mat-card-subtitle>Chausson matériaux</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <strong>Mes missions</strong>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                  <p style="color: rgb(51, 193, 91);"><li>Première année (2019-2020)</li></p>
+                  A mon arrivée dans la société, j'ai suivi une formation de 2 semaines qui m'a permis de me familiariser avec l'environnement
+                  de l'IBMi (V7R3), et également sur sa base de données DB2 ainsi que les principaux langages de programmation (CL, RP IV/free).<br/>
+                  Par la suite j'ai participé à des petits projets de développement qui étaient répartis entre l'ensemble des développeurs juniors 
+                  de l'équipe IBMi afin de pouvoir nous exercer et également découvrir les normes de programmation de l'entreprise.
+              </mat-expansion-panel>
+          </mat-accordion>
+      </mat-card-content>
+  </mat-card><br/>
+  <!-- Mairie de Vals près le Puy -->
+  <span style="color: grey;"><li style="margin-left: 35px;">15 Juillet 2019 - 26 Juillet 2019 (2 semaines)</li></span><br/>
+  <mat-card>
     <mat-card-header>
-        <div mat-card-avatar id="chausson" (click)="openDialog('Chausson')"
+        <div mat-card-avatar id="mairie" (click)="openDialog('Mairie de Vals près le Puy')"
             matRipple 
             [matRippleUnbounded]="true"
             [matRippleRadius]="60"
             [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
-        <mat-card-title style="color: rgb(49, 66, 216);">Développeur IBMi en alternance</mat-card-title>
-        <mat-card-subtitle>Chausson matériaux</mat-card-subtitle>
+        <mat-card-title style="color: rgb(49, 66, 216);">Emploi saisonnier</mat-card-title>
+        <mat-card-subtitle>Mairie de Vas près le Puy</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <mat-accordion>
@@ -18,14 +53,122 @@
                   <strong>Mes missions</strong>
                 </mat-panel-title>
               </mat-expansion-panel-header>
-                <p style="color: rgb(51, 193, 91);"><li>Première année (2019-2020)</li></p>
-                A mon arrivée dans la société, j'ai suivi une formation de 2 semaines qui m'a permis de me familiariser avec l'environnement
-                de l'IBMi (V7R3), et également sur sa base de données DB2 ainsi que les principaux langages de programmation (CL, RP IV/free).<br/>
-                Par la suite j'ai participé à des petits projets de développement qui étaient répartis pour l'ensemble des développeurs juniors 
-                de l'équipe IBMi afin de pouvoir nous exercer et également découvrir les normes de programmation de l'entreprise.
+                Travaux sur la voirie et appuis logistiques 
             </mat-expansion-panel>
         </mat-accordion>
     </mat-card-content>
-</mat-card>
-<br/>
-<mat-divider></mat-divider>
+  </mat-card><br/>
+  <!-- Stage développement web ASTI -->
+  <span style="color: grey;"><li style="margin-left: 35px;">15 Avril 2019 - 26 Juin 2019 (10 semaines)</li></span><br/>
+  <mat-card>
+    <mat-card-header>
+        <div mat-card-avatar id="asti" (click)="openDialog('A.S.T.I')"
+            matRipple 
+            [matRippleUnbounded]="true"
+            [matRippleRadius]="60"
+            [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
+        <mat-card-title style="color: rgb(49, 66, 216);">Stage en développement web</mat-card-title>
+        <mat-card-subtitle>ASTI</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <strong>Mes missions</strong>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+                Découverte du milieu du développement de progiciels et des diverses solutions proposées par la société.<br/>
+                Développement d'une application web B2B avec Angular (manque évident de suivi durant le stage...).
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+  </mat-card><br/>
+  <!-- Mairie de Vals près le Puy -->
+  <span style="color: grey;"><li style="margin-left: 35px;">16 Août 2018 - 30 Août 2018 (2 semaines)</li></span><br/>
+  <mat-card>
+    <mat-card-header>
+        <div mat-card-avatar id="mairie" (click)="openDialog('Mairie de Vals près le Puy')"
+            matRipple 
+            [matRippleUnbounded]="true"
+            [matRippleRadius]="60"
+            [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
+        <mat-card-title style="color: rgb(49, 66, 216);">Emploi saisonnier</mat-card-title>
+        <mat-card-subtitle>Mairie de Vas près le Puy</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <strong>Mes missions</strong>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+                Travaux sur la voirie et appuis logistiques 
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+  </mat-card><br/>
+  <!-- Numesis -->
+  <span style="color: grey;"><li style="margin-left: 35px;">29 Juillet 2018 - 14 Août 2018 (2 semaines)</li></span><br/>
+  <mat-card>
+    <mat-card-header>
+        <div mat-card-avatar id="numesis" (click)="openDialog('Numesis le Puy en Velay')"
+            matRipple 
+            [matRippleUnbounded]="true"
+            [matRippleRadius]="60"
+            [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
+        <mat-card-title style="color: rgb(49, 66, 216);">Technicien </mat-card-title>
+        <mat-card-subtitle>Numesis le Puy en Velay</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <strong>Mes missions</strong>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+                Dépannages téléphoniques/informatiques/réseaux.<br/>
+                Câblage FO/réseaux d'une usine de production de pièces automobiles.
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+  </mat-card><br/>
+  <br/>
+  <!-- *******************************************Formations*************************************** -->
+  <h2 #formations>Mes Formations
+    <mat-divider></mat-divider>
+  </h2>
+  <!-- ENSSEIHT -->
+  <span style="color: grey;"><li style="margin-left: 35px;">Septembre 2019 - Septembre 2022</li></span><br/>
+  <mat-card>
+    <mat-card-header>
+        <div mat-card-avatar id="enseeiht" (click)="openDialog('Numesis le Puy en Velay')"
+            matRipple 
+            [matRippleUnbounded]="true"
+            [matRippleRadius]="60"
+            [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
+        <mat-card-title style="color: rgb(49, 66, 216);">ENSSEIHT (Toulouse) </mat-card-title>
+        <mat-card-subtitle>Cycle ingénieur en alterance en Sciences du Numérique</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card><br/>
+</div>
+
+
+<div id="list-example" class="list-group">
+  <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+  <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+  <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+  <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+</div>
+<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+  <h4 id="list-item-1">Item 1</h4>
+  <p>...</p>
+  <h4 id="list-item-2">Item 2</h4>
+  <p>...</p>
+  <h4 id="list-item-3">Item 3</h4>
+  <p>...</p>
+  <h4 id="list-item-4">Item 4</h4>
+  <p>...</p>
+</div>
