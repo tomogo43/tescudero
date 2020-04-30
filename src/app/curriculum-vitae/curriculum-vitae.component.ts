@@ -47,6 +47,27 @@ export class CurriculumVitaeComponent implements OnInit, OnDestroy {
       lng: 3.887558,
       content: '',
       link: '#'
+    },
+    {
+      place: 'ENSEEIHT',
+      lat: 43.602279,
+      lng: 1.454763,
+      content: '',
+      link: 'http://www.enseeiht.fr/fr/index.html'
+    },
+    {
+      place: 'IUT de Roanne',
+      lat: 46.044710,
+      lng: 4.071701,
+      content: '',
+      link: 'https://iut-roanne.univ-st-etienne.fr'
+    },
+    {
+      place: 'B.I.A',
+      lat: 45.036117,
+      lng: 3.892508,
+      content: '',
+      link: 'https://eduscol.education.fr/sti/formations/tout-niveau/brevet-dinitiation-aeronautique-bia'
     }
   ]
   
@@ -55,10 +76,6 @@ export class CurriculumVitaeComponent implements OnInit, OnDestroy {
   constructor(private matDialog: MatDialog,
               private langueService: LangueService) { }
   
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll($event) {
-      console.log("scrolling...");
-  }
 
    scroll(el: HTMLElement) {
      el.scrollIntoView({

@@ -38,3 +38,98 @@ h2 {
     background-position: center;
     cursor: pointer;
 }
+
+#roanne {
+    background-image: url("http://tescudero.fr/images/roanne.jpg");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+#bia {
+    background-image: url("http://tescudero.fr/images/dr400.JPG");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+#navigation {
+    position: fixed;
+}
+
+h3 {
+    color: rgb(49, 66, 216);
+    font-size: 20px;
+    text-align: center;
+}
+
+h4 {
+    color: rgb(49, 66, 216);
+    font-size: 18px;
+    text-align: center;
+}
+
+.icon {
+    color: rgb(51, 193, 91);
+    font-size: 16px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.icon2 {
+    color: rgb(51, 193, 91);
+    font-size: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.autre {
+    border: 2px solid rgb(179, 177, 177);
+    box-shadow: 10px 5px 5px grey;
+    padding: 5px 5px 5px 5px;
+}
+
+.nav-cv {
+    border: 1px solid grey;
+    background-color: rgba(51, 193, 91, 0.788);
+    margin: 5px 5px 15px 5px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: black;
+    box-shadow: 10px 5px 5px grey;;
+}
+
+.nav-cv:hover {
+    background-color: rgba(49, 66, 216, 0.603);;
+    color: white;
+    transition: 1s;
+}
+
+.cadre-loisirs {
+    margin-bottom: 15px;
+}
+
+#profil {
+    background-image: url("http://tescudero.fr/images/profil.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+@media only screen and (max-width : 960px) {
+    
+    .autre {
+        text-align: center;
+    }
+
+    #navigation {
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width : 1100px) {
+    #navigation {
+        position: relative;
+    }
+}
