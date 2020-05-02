@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
 import { LangueService } from '../services/langue.service';
 import { Subscription } from 'rxjs';
+import { ViewportScroller } from '@angular/common';
+/* momentjs */
 import * as moment from 'moment';
 
 @Component({
@@ -11,6 +13,9 @@ import * as moment from 'moment';
   styleUrls: ['./curriculum-vitae.component.scss']
 })
 
+
+
+
 export class CurriculumVitaeComponent implements OnInit, OnDestroy {
 
   dateTomorow = new Date(Date.now());
@@ -18,6 +23,12 @@ export class CurriculumVitaeComponent implements OnInit, OnDestroy {
   diff: string;
   langue = 'FR';
   langueSubscription: Subscription;
+  top: HTMLElement;
+
+  goToTop: string = "Revenir en haut";
+
+  // flèche remonter vers le haut
+  flecheHide: boolean = true;
 
   organismes = [
     {
@@ -71,18 +82,41 @@ export class CurriculumVitaeComponent implements OnInit, OnDestroy {
     }
   ]
   
-  
+  // affiche la flèche remonter en haut de page
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if(window.scrollY > 400) {
+      this.flecheHide = false;
+    } else {
+      this.flecheHide = true;
+    }
+  }
 
   constructor(private matDialog: MatDialog,
-              private langueService: LangueService) { }
+              private langueService: LangueService,
+              private viewportScroller: ViewportScroller) { }
+  
   
 
-   scroll(el: HTMLElement) {
-     el.scrollIntoView({
-       behavior: "smooth"
-     });
-   }
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({
+      behavior: "smooth"
+    });
+    // allume la flèche si 
+    if(window.scrollY > 400) {
+      this.flecheHide = false;
+    }
+  }
 
+  // remonter en haut de page
+  toTop(top: HTMLElement) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }   
+
+   
   ngOnInit(): void {
     this.langueSubscription = this.langueService.langueSubject.subscribe(
       (value) => {
@@ -91,8 +125,10 @@ export class CurriculumVitaeComponent implements OnInit, OnDestroy {
         // si langue français
         if (this.langue === 'FR') {
           moment.locale('fr');
+          this.goToTop = "Revenir en haut";
         } else if (this.langue === 'EN') {
           moment.locale('en');
+          this.goToTop = "Reach the top";
         }
 
         // calcula la difference de date

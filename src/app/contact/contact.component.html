@@ -1,1 +1,11 @@
-<p>contact works!</p>
+<div style="height: 100vh;">
+    <div class="container-fluid disable-select" style="text-align: center;">
+        <p style="font-size: 24px; color: rgb(51, 193, 91);">
+            <!-- Français -->
+            <span *ngIf="langue === 'FR'">La page n'est pas encore disponible, je travaille dessus! </span>
+            <!-- Anglais -->
+            <span *ngIf="langue === 'EN'">Sorry, this page isn't available, I'm working on it ! </span>
+        <img style="max-height: 90%; width: 90%; margin: 5% 5% 5% 5%;" src="http://tescudero.fr/images/undraw_work_together_h63l.svg">
+    </div>
+</div>
+

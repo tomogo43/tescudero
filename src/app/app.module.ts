@@ -40,6 +40,7 @@ import { SideComponent } from './side/side.component';
 import { ContactComponent } from './contact/contact.component';
 import { LangueService } from './services/langue.service';
 import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const appRoutes : Routes = [
@@ -65,7 +66,8 @@ const appRoutes : Routes = [
     HeaderComponent,
     SideComponent,
     ContactComponent,
-    DialogOverviewComponent
+    DialogOverviewComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
-import { Component, OnInit, Inject, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Inject, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogData } from '../interfaces/dialog-data';
+import { LangueService } from '../services/langue.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -8,7 +10,7 @@ import { DialogData } from '../interfaces/dialog-data';
   templateUrl: './dialog-overview.component.html',
   styleUrls: ['./dialog-overview.component.scss']
 })
-export class DialogOverviewComponent implements OnInit, AfterViewInit {
+export class DialogOverviewComponent implements OnInit, AfterViewInit, OnDestroy {
   map: google.maps.Map;
   lat = 0;
   lng = 0;
@@ -21,10 +23,14 @@ export class DialogOverviewComponent implements OnInit, AfterViewInit {
   content: string;
   link: string;
 
+  langue: string = "FR";
+  langueSubscription: Subscription;
+
   
 
   constructor(private dialogRef: MatDialogRef<DialogOverviewComponent>,
-  @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+              @Inject(MAT_DIALOG_DATA) public data: DialogData,
+              private langueService: LangueService ) {
     this.place = data.place;
     this.content = data.content;
     this.link = data.link;
@@ -48,6 +54,12 @@ export class DialogOverviewComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.langueSubscription = this.langueService.langueSubject.subscribe(
+      (value) => {
+        this.langue = value;
+      }
+    );
+    this.langueService.emitLangue();
   }
 
   /* Initialise map */
@@ -64,5 +76,9 @@ export class DialogOverviewComponent implements OnInit, AfterViewInit {
   }
 
   @ViewChild('mapContainer', {static: false}) gmap:ElementRef;
+
+  ngOnDestroy() {
+    this.langueSubscription.unsubscribe();
+  }
 
 }

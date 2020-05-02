@@ -19,6 +19,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // langue de l'appli
   langue; string = 'FR';
 
+  //ouvrir le menu 
+  openMenu: string = "Ouvrir le menu"
+
   constructor(private sidenavService : SidenavService,
               private langueService : LangueService,
               private router : Router) {
@@ -46,6 +49,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.langueSubscription = this.langueService.langueSubject.subscribe(
       (value) => {
         this.langue = value;
+        if(value === "EN") {
+          this.openMenu = "Open menu";
+        } else {
+          this.openMenu = "Ouvrir le menu";
+        }
       }
     );
     this.langueService.emitLangue();

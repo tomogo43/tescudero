@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { SidenavService } from './services/sidenav.service'; 
 import { Subscription } from 'rxjs';
 

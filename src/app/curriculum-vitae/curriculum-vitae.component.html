@@ -1,7 +1,11 @@
-<div class="container-fluid">  
+<div class="container-fluid" #top>  
+  
   <div class="row">
+    <!-- Bouton pour revenir en haut de la page -->
+    <div [hidden]="flecheHide" (click)="toTop(top)" matTooltip="{{goToTop}}" id="fleche-haut"></div>
     <div class="col-lg-2">
-      <div id="navigation">
+      <!-- Français -->
+      <div *ngIf="langue==='FR'" id="navigation">
         <h3>Parcourrez mon CV !</h3>
         <div class="nav-cv" (click)="scroll(exp)">Mes expériences</div>
         <div class="nav-cv" (click)="scroll(formations)">Mes formations</div>
@@ -21,15 +25,40 @@
           </mat-card-content>
         </mat-card>
       </div>
+      <!-- Anglais -->
+      <div *ngIf="langue==='EN'" id="navigation">
+        <h3>Discover my CV !</h3>
+        <div class="nav-cv" (click)="scroll(exp)">My experiences</div>
+        <div class="nav-cv" (click)="scroll(formations)">My trainings</div>
+        <div class="nav-cv" (click)="scroll(competences)">My skills</div>
+        <div class="nav-cv" (click)="scroll(loisirs)">My hobbies</div>
+        <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar id="profil"></div> 
+            <mat-card-title style="color: rgb(49, 66, 216);">Useful info</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <br/>
+            <li class="fas fa-user icon"></li>21/10/1999<br/>
+            <li class="fas fa-envelope icon"></li> thomas@tescudero.fr <br/>
+            <li class="fas fa-phone icon"></li>+33 7 81 22 86 82<br/>
+            <li class="fas fa-car icon"></li>car driving license
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
+    
+    
     <div class="col-lg-10">
       <!-- *******************************************Expériences professionnelles*************************************** -->
-      <h2 #exp>Mes expériences professionnelles
+      <h2 #exp><span *ngIf="langue==='FR'">Mes expériences professionnelles</span><span *ngIf="langue==='EN'">My professional experiences</span>
         <mat-divider></mat-divider>
       </h2>
 
       <!-- Chausson matériaux -->
-      <span style="color: grey;"><li style="margin-left: 35px;">octobre 2019 - Aujourd'hui ({{ diff }})</li></span><br/>
+      <span style="color: grey;">
+        <li *ngIf="langue==='FR'" style="margin-left: 35px;">Octobre 2019 - Aujourd'hui ({{ diff }})</li>
+        <li *ngIf="langue==='EN'" style="margin-left: 35px;">October 2019 - Today ({{ diff }})</li></span><br/>
       <mat-card>
           <mat-card-header>
               <div mat-card-avatar id="chausson" (click)="openDialog('Chausson matériaux')"
@@ -37,7 +66,9 @@
                   [matRippleUnbounded]="true"
                   [matRippleRadius]="60"
                   [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
-              <mat-card-title style="color: rgb(49, 66, 216);">Développeur IBMi en alternance</mat-card-title>
+              <mat-card-title style="color: rgb(49, 66, 216);">
+                <span *ngIf="langue==='FR'">développeur IBMi en alternance</span>
+                <span *ngIf="langue==='EN'">IBMi developper (apprenticeship)</span> </mat-card-title>
               <mat-card-subtitle>Chausson matériaux</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
@@ -45,20 +76,33 @@
                   <mat-expansion-panel>
                     <mat-expansion-panel-header>
                       <mat-panel-title>
-                        <strong>Mes missions</strong>
+                        <strong *ngIf="langue==='FR'">Mes missions</strong>
+                        <strong *ngIf="langue==='EN'">My assignments</strong>
                       </mat-panel-title>
                     </mat-expansion-panel-header>
+                    <span *ngIf="langue==='FR'">
                       <p style="color: rgb(51, 193, 91);"><li>Première année (2019-2020)</li></p>
                       A mon arrivée dans la société, j'ai suivi une formation de 2 semaines qui m'a permis de me familiariser avec l'environnement
                       de l'IBMi (V7R3), et également sur sa base de données DB2 ainsi que les principaux langages de programmation (CL, RP IV/free).<br/>
                       Par la suite j'ai participé à des petits projets de développement qui étaient répartis entre l'ensemble des développeurs juniors 
                       de l'équipe IBMi afin de pouvoir nous exercer et également découvrir les normes de programmation de l'entreprise.
+                    </span>
+                    <span *ngIf="langue==='EN'">
+                      <p style="color: rgb(51, 193, 91);"><li>First year (2019-2020)</li></p>
+                      On october, I had two weeks of trainings about IBMi environment, the DB2 database and also the different programming
+                      languages (CL, RPG IV/free).<br/>
+                      After that, I worked on small projects reserved to all junior programers of the IBMi team in the goal to involve our programming skills
+                      and discover more about the company.
+                    </span>
+                      
                   </mat-expansion-panel>
               </mat-accordion>
           </mat-card-content>
       </mat-card><br/>
       <!-- Mairie de Vals près le Puy -->
-      <span style="color: grey;"><li style="margin-left: 35px;">15 Juillet 2019 - 26 Juillet 2019 (2 semaines)</li></span><br/>
+      <span style="color: grey;">
+        <li *ngIf="langue==='FR'" style="margin-left: 35px;">15 Juillet 2019 - 26 Juillet 2019 (2 semaines)</li>
+        <li *ngIf="langue==='EN'" style="margin-left: 35px;">July 15 2019 - July 26 2019 (2 weeks)</li></span><br/>
       <mat-card>
         <mat-card-header>
             <div mat-card-avatar id="mairie" (click)="openDialog('Mairie de Vals près le Puy')"
@@ -66,24 +110,32 @@
                 [matRippleUnbounded]="true"
                 [matRippleRadius]="60"
                 [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
-            <mat-card-title style="color: rgb(49, 66, 216);">Emploi saisonnier</mat-card-title>
-            <mat-card-subtitle>Mairie de Vas près le Puy</mat-card-subtitle>
+            <mat-card-title style="color: rgb(49, 66, 216);">
+              <span *ngIf="langue==='FR'">Emploi saisonnier</span>
+              <span *ngIf="langue==='EN'">Summer job</span></mat-card-title>
+            <mat-card-subtitle>
+              <span *ngIf="langue==='FR'">Mairie de Vas près le Puy</span>
+              <span *ngIf="langue==='EN'">City hall Vas près le Puy</span></mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
             <mat-accordion>
                 <mat-expansion-panel>
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                      <strong>Mes missions</strong>
+                      <strong *ngIf="langue==='FR'">Mes missions</strong>
+                      <strong *ngIf="langue==='EN'">My assignments</strong>
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                    Travaux sur la voirie et appuis logistiques 
+                    <span *ngIf="langue==='FR'">Travaux sur la voirie et appuis logistiques</span>
+                    <span *ngIf="langue==='EN'">Green space maintenance and logistic helper</span>
                 </mat-expansion-panel>
             </mat-accordion>
         </mat-card-content>
       </mat-card><br/>
       <!-- Stage développement web ASTI -->
-      <span style="color: grey;"><li style="margin-left: 35px;">15 Avril 2019 - 26 Juin 2019 (10 semaines)</li></span><br/>
+      <span style="color: grey;">
+        <li *ngIf="langue==='FR'" style="margin-left: 35px;">15 Avril 2019 - 26 Juin 2019 (10 semaines)</li>
+        <li *ngIf="langue==='EN'" style="margin-left: 35px;">April 15 2019 - June 26 2019 (10 semaines)</li></span><br/>
       <mat-card>
         <mat-card-header>
             <div mat-card-avatar id="asti" (click)="openDialog('A.S.T.I')"
@@ -91,7 +143,9 @@
                 [matRippleUnbounded]="true"
                 [matRippleRadius]="60"
                 [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
-            <mat-card-title style="color: rgb(49, 66, 216);">Stage en développement web</mat-card-title>
+            <mat-card-title style="color: rgb(49, 66, 216);">
+              <span *ngIf="langue==='FR'">Stage en développement web</span>
+              <span *ngIf="langue==='EN'">Web development training period</span></mat-card-title>
             <mat-card-subtitle>ASTI</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
@@ -99,17 +153,27 @@
                 <mat-expansion-panel>
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                      <strong>Mes missions</strong>
+                      <strong *ngIf="langue==='FR'">Mes missions</strong>
+                      <strong *ngIf="langue==='EN'">My assignments</strong>
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                    Découverte du milieu du développement de progiciels et des diverses solutions proposées par la société.<br/>
-                    Développement d'une application web B2B avec Angular (manque évident de suivi durant le stage...).
+                    <span *ngIf="langue==='FR'">
+                      Découverte du milieu du développement de progiciels et des diverses solutions proposées par la société.<br/>
+                      Développement d'une application web B2B avec Angular (manque évident de suivi de la part de mon maître de stage durant le stage...).
+                    </span>
+                    <span *ngIf="langue==='EN'">
+                      During this training period, I have been able to discover the functionning of a software development company<br/>
+                      Morever, I developed a web app with angular (But lack of assistance from my tutor during this training period)
+                    </span>
+                   
                 </mat-expansion-panel>
             </mat-accordion>
         </mat-card-content>
       </mat-card><br/>
       <!-- Mairie de Vals près le Puy -->
-      <span style="color: grey;"><li style="margin-left: 35px;">16 Août 2018 - 30 Août 2018 (2 semaines)</li></span><br/>
+      <span style="color: grey;">
+        <li *ngIf="langue==='FR'" style="margin-left: 35px;">16 Août 2019 - 30 Août 2019 (2 semaines)</li>
+        <li *ngIf="langue==='EN'" style="margin-left: 35px;">August 15 2019 - August 26 2019 (2 weeks)</li></span><br/>
       <mat-card>
         <mat-card-header>
             <div mat-card-avatar id="mairie" (click)="openDialog('Mairie de Vals près le Puy')"
@@ -117,24 +181,32 @@
                 [matRippleUnbounded]="true"
                 [matRippleRadius]="60"
                 [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
-            <mat-card-title style="color: rgb(49, 66, 216);">Emploi saisonnier</mat-card-title>
-            <mat-card-subtitle>Mairie de Vas près le Puy</mat-card-subtitle>
+            <mat-card-title style="color: rgb(49, 66, 216);">
+              <span *ngIf="langue==='FR'">Emploi saisonnier</span>
+              <span *ngIf="langue==='EN'">Summer job</span></mat-card-title>
+            <mat-card-subtitle>
+              <span *ngIf="langue==='FR'">Mairie de Vas près le Puy</span>
+              <span *ngIf="langue==='EN'">City hall Vas près le Puy</span></mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
             <mat-accordion>
                 <mat-expansion-panel>
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                      <strong>Mes missions</strong>
+                      <strong *ngIf="langue==='FR'">Mes missions</strong>
+                      <strong *ngIf="langue==='EN'">My assignments</strong>
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                    Travaux sur la voirie et appuis logistiques 
+                    <span *ngIf="langue==='FR'">Travaux sur la voirie et appuis logistiques</span>
+                    <span *ngIf="langue==='EN'">Green space maintenance and logistic helper</span>
                 </mat-expansion-panel>
             </mat-accordion>
         </mat-card-content>
       </mat-card><br/>
       <!-- Numesis -->
-      <span style="color: grey;"><li style="margin-left: 35px;">29 Juillet 2018 - 14 Août 2018 (2 semaines)</li></span><br/>
+      <span style="color: grey;">
+        <li *ngIf="langue==='FR'" style="margin-left: 35px;">29 Juillet 2018 - 14 Août 2018 (2 semaines)</li>
+        <li *ngIf="langue==='EN'" style="margin-left: 35px;">July 29 2018 - August 14 2018 (2 weeks)</li></span><br/>
       <mat-card>
         <mat-card-header>
             <div mat-card-avatar id="numesis" (click)="openDialog('Numesis le Puy en Velay')"
@@ -142,7 +214,9 @@
                 [matRippleUnbounded]="true"
                 [matRippleRadius]="60"
                 [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
-            <mat-card-title style="color: rgb(49, 66, 216);">Technicien </mat-card-title>
+            <mat-card-title style="color: rgb(49, 66, 216);">
+              <span *ngIf="langue==='FR'">Technicien</span>
+              <span *ngIf="langue==='EN'">Technician</span></mat-card-title>
             <mat-card-subtitle>Numesis le Puy en Velay</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
@@ -150,22 +224,33 @@
                 <mat-expansion-panel>
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                      <strong>Mes missions</strong>
+                      <strong *ngIf="langue==='FR'">Mes missions</strong>
+                      <strong *ngIf="langue==='EN'">My assignments</strong>
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                    Dépannages téléphoniques/informatiques/réseaux.<br/>
-                    Câblage FO/réseaux d'une usine de production de pièces automobiles.
+                    <span *ngIf="langue==='FR'">
+                      Dépannages téléphoniques/informatiques/réseaux.<br/>
+                      Câblage FO/réseaux d'une usine de production de pièces automobiles.
+                    </span>
+                    <span *ngIf="langue==='EN'">
+                      informatic/networks troubleshootings<br/>
+                      network wiring in a factory specialised in the production of card parts.
+                    </span> 
                 </mat-expansion-panel>
             </mat-accordion>
         </mat-card-content>
       </mat-card><br/>
       <br/>
       <!-- *******************************************Formations*************************************** -->
-      <h2 #formations>Mes Formations
+      <h2 #formations>
+        <span *ngIf="langue==='FR'">Mes Formations</span>
+        <span *ngIf="langue==='EN'">My trainings</span>
         <mat-divider></mat-divider>
       </h2>
       <!-- ENSSEIHT -->
-      <span style="color: grey;"><li style="margin-left: 35px;">Septembre 2019 - Septembre 2022</li></span><br/>
+      <span style="color: grey;">
+        <li *ngIf="langue==='FR'" style="margin-left: 35px;">Septembre 2019 - Septembre 2022</li>
+        <li *ngIf="langue==='EN'" style="margin-left: 35px;">September 2019 - September 2022</li></span><br/>
       <mat-card>
         <mat-card-header>
             <div mat-card-avatar id="enseeiht" (click)="openDialog('ENSEEIHT')"
@@ -174,11 +259,16 @@
                 [matRippleRadius]="60"
                 [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
             <mat-card-title style="color: rgb(49, 66, 216);">ENSSEIHT (Toulouse) </mat-card-title>
-            <mat-card-subtitle>Cycle ingénieur en alterance en Sciences du Numérique</mat-card-subtitle>
+            <mat-card-subtitle>
+              <span *ngIf="langue==='FR'">Cycle ingénieur en alterance en Sciences du Numérique</span>
+              <span *ngIf="langue==='EN'">IT engineering school</span>
+             </mat-card-subtitle>
         </mat-card-header>
       </mat-card><br/>
       <!-- IUT de Roanne -->
-      <span style="color: grey;"><li style="margin-left: 35px;">Septembre 2017 - Juin 2019 (2 ans)</li></span><br/>
+      <span style="color: grey;">
+        <li *ngIf="langue==='FR'" style="margin-left: 35px;">Septembre 2017 - Juin 2019 (2 ans)</li>
+        <li *ngIf="langue==='EN'" style="margin-left: 35px;">September 2017 - June 2019 (2 years)</li></span><br/>
       <mat-card>
         <mat-card-header>
             <div mat-card-avatar id="roanne" (click)="openDialog('IUT de Roanne')"
@@ -187,11 +277,15 @@
                 [matRippleRadius]="60"
                 [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
             <mat-card-title style="color: rgb(49, 66, 216);">IUT de Roanne</mat-card-title>
-            <mat-card-subtitle>DUT Réseaux et Télécommunications</mat-card-subtitle>
+            <mat-card-subtitle>
+              <span *ngIf="langue==='FR'">DUT Réseaux et Télécommunications</span>
+              <span *ngIf="langue==='EN'">Two years of technical degree in Network and Telecommunications</span></mat-card-subtitle>
         </mat-card-header>
       </mat-card><br/>
       <!-- BIA -->
-      <span style="color: grey;"><li style="margin-left: 35px;">Septembre 2014 - Mai 2015</li></span><br/>
+      <span style="color: grey;">
+        <li *ngIf="langue==='FR'" style="margin-left: 35px;">Septembre 2014 - Mai 2015</li>
+        <li *ngIf="langue==='FR'" style="margin-left: 35px;">Septemeber 2014 - May 2015</li></span><br/>
       <mat-card>
         <mat-card-header>
             <div mat-card-avatar id="bia" (click)="openDialog('B.I.A')"
@@ -199,15 +293,21 @@
                 [matRippleUnbounded]="true"
                 [matRippleRadius]="60"
                 [matRippleColor]="'rgba(49, 66, 216, 0.225)'"></div>
-            <mat-card-title style="color: rgb(49, 66, 216);">Brevet d'Initiation à l'Aéronautique</mat-card-title>
+            <mat-card-title style="color: rgb(49, 66, 216);">
+              <span *ngIf="langue==='FR'">Brevet d'Initiation à l'Aéronautique</span>
+              <span *ngIf="langue==='EN'">Flight initiation</span>
+              </mat-card-title>
             <mat-card-subtitle>Lycée Charles & Adrien Dupuy (43)</mat-card-subtitle>
         </mat-card-header>
       </mat-card><br/>
       <!-- *******************************************Formations*************************************** -->
-      <h2 #competences>Mes Compétences
+      <h2 #competences>
+        <span *ngIf="langue==='FR'">Mes Compétences</span>
+        <span *ngIf="langue==='EN'">My skills</span>
         <mat-divider></mat-divider>
       </h2>
-      <mat-card>
+      <!-- Français -->
+      <mat-card *ngIf="langue==='FR'">
         <mat-card-header>
           <mat-card-title style="color: rgb(49, 66, 216);">Informatique</mat-card-title>
         </mat-card-header>
@@ -236,7 +336,38 @@
           </ul>
         </mat-card-content>
       </mat-card><br/>
-      <mat-card>
+      <!-- Anglais -->
+      <mat-card *ngIf="langue==='EN'">
+        <mat-card-header>
+          <mat-card-title style="color: rgb(49, 66, 216);">Computer science</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-card-subtitle style="color: rgb(51, 193, 91);">Functional programming:</mat-card-subtitle>
+          <ul>
+            <li>C, Ada, matlab (scilab), RPG IV/free</li>
+          </ul>
+          <mat-card-subtitle style="color: rgb(51, 193, 91);">Object programming:</mat-card-subtitle>
+          <ul>
+            <li>C++, Java</li>
+          </ul>
+          <mat-card-subtitle style="color: rgb(51, 193, 91);">OS programming:</mat-card-subtitle>
+          <ul>
+            <li>CLP(AS400), shell</li>
+          </ul>
+          <mat-card-subtitle style="color: rgb(51, 193, 91);">Web programming:</mat-card-subtitle>
+          <ul>
+            <li>html, css, JavaScript & TypeScript, php</li>
+            <li>Angular, bootstrap</li>
+          </ul>
+          <mat-card-subtitle style="color: rgb(51, 193, 91);">Softwares:</mat-card-subtitle>
+          <ul>
+            <li>Microsoft office</li>
+            <li>MS project</li>
+          </ul>
+        </mat-card-content>
+      </mat-card><br/>
+      <!-- Français -->
+      <mat-card *ngIf="langue==='FR'">
         <mat-card-header>
           <mat-card-title style="color: rgb(49, 66, 216);">Réseaux</mat-card-title>
         </mat-card-header>
@@ -254,6 +385,7 @@
             <li>Protocoles de routage longue distance:<br/>
               -OSPF<br/>
               -MPLS<br/>
+              -BGP<br/>
               -FR<br/>
               -x25</li>
             <li>Configuration d'un coeur de réseau</li>
@@ -275,7 +407,49 @@
           </ul>
         </mat-card-content>
       </mat-card><br/>
-      <mat-card>
+      <!-- Anglais -->
+      <mat-card *ngIf="langue==='EN'">
+        <mat-card-header>
+          <mat-card-title style="color: rgb(49, 66, 216);">Network:</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-card-subtitle style="color: rgb(51, 193, 91);">Local networks:</mat-card-subtitle>
+          <ul>
+            <li>Switch/router configuration (cisco/linux), set up of local network<br/>
+              -Vlan<br/>
+              -NAT<br/>
+              -ACL<br/>
+              -routing
+          </ul>
+          <mat-card-subtitle style="color: rgb(51, 193, 91);">Operator networks:</mat-card-subtitle>
+          <ul>
+            <li>Routing protocols<br/>
+              -OSPF<br/>
+              -MPLS<br/>
+              -BGP<br/>
+              -FR<br/>
+              -x25</li>
+            <li>Network backbone knowledges</li>
+          </ul>
+          <mat-card-subtitle style="color: rgb(51, 193, 91);">Cellular networks:</mat-card-subtitle>
+          <ul>
+            <li>Antennas architecture knowledges</li>
+            <li>Network modeling with ATOLL</li>
+            <li>radio waves propagation</li>
+          </ul>
+          <mat-card-subtitle style="color: rgb(51, 193, 91);">System administration:</mat-card-subtitle>
+          <ul>
+            <li>Web server maintenance (LAMP)</li>
+            <li>Network services (windows server 2012/ Active Directory):<br/>
+              -DNS<br/>
+              -DHCP<br/>
+              -mail server</li>
+            <li>Unified directory maintenance (windows server 2012/LDAP/Active Directory)</li>
+          </ul>
+        </mat-card-content>
+      </mat-card><br/>
+      <!-- Français -->
+      <mat-card *ngIf="langue==='FR'">
         <mat-card-header>
           <mat-card-title style="color: rgb(49, 66, 216);">Langues</mat-card-title>
         </mat-card-header>
@@ -284,8 +458,21 @@
           <p>Espagnol (A2)</p>
         </mat-card-content>
       </mat-card><br/>
-      <!-- *******************************************Formations*************************************** -->
-      <h2 #loisirs>Mes Loisirs
+      <!-- Anglais -->
+      <mat-card *ngIf="langue==='EN'">
+        <mat-card-header>
+          <mat-card-title style="color: rgb(49, 66, 216);">Languages</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>French (mother tongue)</p>
+          <p>English (B1)</p>
+          <p>Spanish (A2)</p>
+        </mat-card-content>
+      </mat-card><br/>
+      <!-- *******************************************Loisirs*************************************** -->
+      <h2 #loisirs>
+        <span *ngIf="langue==='FR'">Mes Loisirs</span>
+        <span *ngIf="langue==='EN'">My hobbies</span>
         <mat-divider></mat-divider>
       </h2>
       <div class="row">
@@ -295,36 +482,56 @@
               <h4>Sports:</h4>
             </mat-card-header>
             <mat-card-content>
-              <li class="fas fa-running icon2"></li>Course à pied<br/>
-              <li class="fas fa-swimmer icon2"></li>Natation
+              <li class="fas fa-running icon2"></li>
+              <span *ngIf="langue==='FR'">Course à pied</span>
+              <span *ngIf="langue==='EN'">Running</span><br/>
+              <li class="fas fa-swimmer icon2"></li>
+              <span *ngIf="langue==='FR'">Natation</span>
+              <span *ngIf="langue==='EN'">Swimming</span>
             </mat-card-content>
           </mat-card>
         </div>
         <div class="col-sm-4">
           <mat-card class="cadre-loisirs">
             <mat-card-header>
-              <h4>Informatique:</h4>
+              <h4 *ngIf="langue==='FR'">Informatique:</h4>
+              <h4 *ngIf="langue==='EN'">Computer science:</h4>
             </mat-card-header>
             <mat-card-content>
-              <li class="fab fa-js icon2"></li>Développement web<br/>
-              <li class="fas fa-network-wired icon2"></li>réseaux
+              <li class="fab fa-js icon2"></li>
+              <span *ngIf="langue==='FR'">Développement web</span>
+              <span *ngIf="langue==='EN'">Web development</span>
+              <br/>
+              <li class="fas fa-network-wired icon2"></li>
+              <span *ngIf="langue==='FR'">Réseaux</span>
+              <span *ngIf="langue==='EN'">Networking</span>
             </mat-card-content>
           </mat-card>
         </div>
         <div class="col-sm-4">
           <mat-card class="cadre-loisirs">
             <mat-card-header>
-              <h4>Autres:</h4>
+              <h4 *ngIf="langue==='FR'">Autres:</h4>
+              <h4 *ngIf="langue==='EN'">Others:</h4>
             </mat-card-header>
             <mat-card-content>
-              <li class="fas fa-user-astronaut icon"></li>Astronomie<br/>
-              <li class="fas fa-plane icon"></li>Aéronautique/drone<br/>
-              <li class="fas fa-music icon"></li>musique (rock/métal)
+              <li class="fas fa-user-astronaut icon"></li>
+              <span *ngIf="langue==='FR'">Astronomie</span>
+              <span *ngIf="langue==='EN'">Astronomy</span>
+              <br/>
+              <li class="fas fa-plane icon"></li>
+              <span *ngIf="langue==='FR'">Aéronautique/drone</span>
+              <span *ngIf="langue==='EN'">Aeronautic/drone</span>
+              <br/>
+              <li class="fas fa-music icon"></li>
+              <span *ngIf="langue==='FR'">musique (rock/métal)</span>
+              <span *ngIf="langue==='EN'">music (rock/metal)</span>
             </mat-card-content>
           </mat-card>
         </div>
       </div>     
     </div>
   </div>
+  
 </div>
 

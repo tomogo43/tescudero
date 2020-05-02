@@ -1,6 +1,8 @@
 <h1 mat-dialog-title>{{place}}</h1>
 <div mat-dialog-content>
-    <a *ngIf="link != '#'" href="{{link}}" target="_blanck">Lien vers l'enreprise <i class="fas fa-link"></i></a>
+    <a *ngIf="link != '#'" href="{{link}}" target="_blanck">
+        <span *ngIf="langue === 'FR'">Lien vers l'enreprise</span>
+        <span *ngIf="langue === 'EN'">Company's link</span><i class="fas fa-link"></i></a>
     
     <div #mapContainer id="map">
     </div>
