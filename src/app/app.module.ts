@@ -9,7 +9,7 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { PostsComponent } from './posts/posts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidenavService } from './services/sidenav.service';
 import { RouterModule, Routes } from '@angular/router';
 import { PositionService } from './services/position.service';
@@ -35,6 +35,14 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 /* MatExpansion */
 import { MatExpansionModule } from '@angular/material/expansion';
+/* Icon */
+import { MatIconModule } from '@angular/material/icon';
+/* FormField */
+import { MatFormFieldModule } from '@angular/material/form-field';
+/* Input */
+import { MatInputModule } from '@angular/material/input';
+/* Button */
+import { MatButtonModule } from '@angular/material/button';
 
 import { SideComponent } from './side/side.component';
 import { ContactComponent } from './contact/contact.component';
@@ -83,6 +91,11 @@ const appRoutes : Routes = [
     MatDividerModule,
     MatDialogModule,
     MatExpansionModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

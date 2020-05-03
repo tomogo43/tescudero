@@ -1,11 +1,42 @@
 <div style="height: 100vh;">
-    <div class="container-fluid disable-select" style="text-align: center;">
-        <p style="font-size: 24px; color: rgb(51, 193, 91);">
-            <!-- Français -->
-            <span *ngIf="langue === 'FR'">La page n'est pas encore disponible, je travaille dessus! </span>
-            <!-- Anglais -->
-            <span *ngIf="langue === 'EN'">Sorry, this page isn't available, I'm working on it ! </span>
-        <img style="max-height: 90%; width: 90%; margin: 5% 5% 5% 5%;" src="http://tescudero.fr/images/undraw_work_together_h63l.svg">
-    </div>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title style="color: rgb(51, 193, 91);">Me contacter</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="emailSendForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Nom</mat-label>
+                            <input matInput formControlName="lastname">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-4">
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Prénom</mat-label>
+                            <input matInput formControlName="firstname">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-4">
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Votre email</mat-label>
+                            <mat-icon matSuffix style="color: rgb(51, 193, 91);"> email</mat-icon>
+                            <input matInput formControlName="email">
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field appearance="outline" class="form-field-mail">
+                        <mat-label>Votre message</mat-label>
+                        <textarea matInput formControlName="message"></textarea>
+                    </mat-form-field>
+                </div><br/>
+                <div style="text-align: center;">
+                    <button type="submit" [disabled]="emailSendForm.invalid" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                        <mat-icon>send</mat-icon>
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
 </div>
 
