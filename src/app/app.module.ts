@@ -52,12 +52,18 @@ import { LangueService } from './services/langue.service';
 import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
 import { FooterComponent } from './footer/footer.component';
 import { EportfolioComponent } from './eportfolio/eportfolio.component';
+import { HomeBisComponent } from './eportfolio/home-bis/home-bis.component';
+import { ApprenticeshipComponent } from './eportfolio/apprenticeship/apprenticeship.component';
+import { EducationComponent } from './eportfolio/education/education.component';
+import { ProfessionalEnglishComponent } from './eportfolio/professional-english/professional-english.component';
+import { SportsComponent } from './eportfolio/sports/sports.component';
 
 
 const appRoutes : Routes = [
   { path : 'home', component: HomeComponent },
   { path : 'cv', component: CurriculumVitaeComponent },
   { path : 'eportfolio', component: EportfolioComponent },
+  { path : 'eportfolio/:section', component: EportfolioComponent },
   { path : 'projects', component: ProjetsComponent },
   { path : 'posts', component: PostsComponent },
   { path : 'contact', component: ContactComponent },
@@ -80,7 +86,12 @@ const appRoutes : Routes = [
     ContactComponent,
     DialogOverviewComponent,
     FooterComponent,
-    EportfolioComponent
+    EportfolioComponent,
+    EducationComponent,
+    HomeBisComponent,
+    ApprenticeshipComponent,
+    ProfessionalEnglishComponent,
+    SportsComponent
   ],
   imports: [
     BrowserModule,
