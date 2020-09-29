@@ -43,17 +43,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 /* Button */
 import { MatButtonModule } from '@angular/material/button';
+/* Menu */
+import { MatMenuModule } from '@angular/material/menu';
 
 import { SideComponent } from './side/side.component';
 import { ContactComponent } from './contact/contact.component';
 import { LangueService } from './services/langue.service';
 import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
 import { FooterComponent } from './footer/footer.component';
+import { EportfolioComponent } from './eportfolio/eportfolio.component';
 
 
 const appRoutes : Routes = [
   { path : 'home', component: HomeComponent },
   { path : 'cv', component: CurriculumVitaeComponent },
+  { path : 'eportfolio', component: EportfolioComponent },
   { path : 'projects', component: ProjetsComponent },
   { path : 'posts', component: PostsComponent },
   { path : 'contact', component: ContactComponent },
@@ -75,7 +79,8 @@ const appRoutes : Routes = [
     SideComponent,
     ContactComponent,
     DialogOverviewComponent,
-    FooterComponent
+    FooterComponent,
+    EportfolioComponent
   ],
   imports: [
     BrowserModule,
@@ -96,6 +101,7 @@ const appRoutes : Routes = [
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
+    MatMenuModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

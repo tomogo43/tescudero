@@ -9,7 +9,8 @@ import { faHome,
          faUser, 
          faPuzzlePiece,
          faPen,
-         faEnvelope } from '@fortawesome/free-solid-svg-icons';
+         faEnvelope,
+         faWallet } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-side',
@@ -23,6 +24,7 @@ export class SideComponent implements OnInit, OnDestroy {
   faPuzzlePiece = faPuzzlePiece;
   faPen = faPen;
   faEnvelope = faEnvelope;
+  faWallet = faWallet;
   langue: string = "FR";
   langueSubscription: Subscription;
 

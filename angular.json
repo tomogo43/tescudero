@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "tescudero"
+  "defaultProject": "tescudero",
+  "cli": {
+    "analytics": "43c3b57b-57bb-47c1-b672-59732f561bac"
+  }
 }
