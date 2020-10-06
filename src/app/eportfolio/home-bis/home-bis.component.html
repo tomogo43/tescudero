@@ -1,8 +1,149 @@
-<div class="row">
-    <div class="col-lg-5">
-        ESCUDERO Thomas
+
+<img [hidden]="true" (load)="onLoad()" src="http://tescudero.fr/images/profil.JPG">
+<div [hidden]="loading" style="width: 300px; 
+        height: 300px; 
+        border-radius: 50%; 
+        border: 2px solid  rgba(49, 66, 216, 0.699); 
+        background-image: url('http://tescudero.fr/images/profil.JPG');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; 
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;">
+</div>
+<mat-progress-spinner
+    [color]="'primary'"
+    [mode]="'indeterminate'"
+    [value]="'50'" *ngIf="loading" style="margin: 0 auto">
+</mat-progress-spinner>
+<br/>
+
+<div style="text-align: center;
+            font-size: 32px;
+            color: rgb(51, 193, 91);">
+    Thomas ESCUDERO<br/>
+    <div style="text-align: center;
+            font-size: 22px;
+            color: rgba(49, 66, 216, 0.699);
+            margin-top: 15px;">
+        IT engineering student at ENSEEIHT<br/>
     </div>
-    <div class="col-lg-7">
-        ma photo
+</div><br/><br/>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div style="background-color: rgba(51, 193, 91, 0.541);
+                    min-width: 60%;
+                    margin-left: 5%;
+                    margin-right: auto;
+                    color: white;
+                    padding: 5px 5px 5px 5px;
+                    border-radius: 15px;">
+            <div style="text-align: center; font-size: 22px;"><strong>About me</strong></div><br/>
+            <div style="border: 0.5px solid white;"></div><br/>
+            feneg je jeg ejg ejg ej ggejg jeg je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
+            ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
+            j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gj<br/><br>
+            feneg je jeg ejg ejg ej ggejg jeg je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
+            ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
+            j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gjfeneg je jeg ejg ejg ej ggejg jeg 
+            je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
+            ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
+            j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gj
+            feneg je jeg ejg ejg ej ggejg jeg je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
+            ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
+            j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gj
+        </div>
+    </div>
+    <div class="col-lg-4" style="text-align: center; margin-top: auto; margin-bottom: auto;">
+        <button mat-stroked-button>Download my full CV</button>
     </div>
 </div>
+<br/>
+<div class="row">
+    <div class="col-lg-3">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>ENSEEIHT</mat-card-title>
+              <mat-card-subtitle>engineering school</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="http://tescudero.fr/images/enseeiht.jpg" alt="ENSEEIHT">
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>See education part</button>
+            </mat-card-actions>
+          </mat-card>
+          
+    </div>
+    <div class="col-lg-3">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>CHAUSSON matériaux</mat-card-title>
+              <mat-card-subtitle>My apprenticeship like IBMi developer</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="http://tescudero.fr/images/enseeiht.jpg" alt="ENSEEIHT">
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>See education part</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+    <div class="col-lg-3">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>ENSEEIHT</mat-card-title>
+              <mat-card-subtitle>engineering school</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="http://tescudero.fr/images/enseeiht.jpg" alt="ENSEEIHT">
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>See education part</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+    <div class="col-lg-3">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>ENSEEIHT</mat-card-title>
+              <mat-card-subtitle>engineering school</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="http://tescudero.fr/images/enseeiht.jpg" alt="ENSEEIHT">
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>See education part</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>
+
+
+    

@@ -7,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeBisComponent implements OnInit {
 
+  // chargement de la photo de profil
+  loading: boolean = true;
+  
   constructor() { }
 
+  // vérifie si la photo de profil est chargée
+  onLoad() {
+    this.loading = false;
+  }
+  
   ngOnInit(): void {
   }
 
