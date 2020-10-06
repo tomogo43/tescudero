@@ -1,75 +1,87 @@
-
-<img [hidden]="true" (load)="onLoad()" src="http://tescudero.fr/images/profil.JPG">
-<div [hidden]="loading" style="width: 300px; 
-        height: 300px; 
-        border-radius: 50%; 
-        border: 2px solid  rgba(49, 66, 216, 0.699); 
-        background-image: url('http://tescudero.fr/images/profil.JPG');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover; 
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;">
-</div>
-<mat-progress-spinner
-    [color]="'primary'"
-    [mode]="'indeterminate'"
-    [value]="'50'" *ngIf="loading" style="margin: 0 auto">
-</mat-progress-spinner>
-<br/>
-
-<div style="text-align: center;
-            font-size: 32px;
-            color: rgb(51, 193, 91);">
-    Thomas ESCUDERO<br/>
-    <div style="text-align: center;
-            font-size: 22px;
-            color: rgba(49, 66, 216, 0.699);
-            margin-top: 15px;">
-        IT engineering student at ENSEEIHT<br/>
+<div class="row">
+  <div class="col-lg-4">
+    <img [hidden]="true" (load)="onLoad()" src="http://tescudero.fr/images/profil.JPG">
+    <div [hidden]="loading" style="width: 300px; 
+            height: 300px; 
+            border-radius: 50%; 
+            border: 2px solid  rgba(49, 66, 216, 0.699); 
+            background-image: url('http://tescudero.fr/images/profil.JPG');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover; 
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;">
     </div>
+    <mat-progress-spinner
+        [color]="'primary'"
+        [mode]="'indeterminate'"
+        [value]="'50'" *ngIf="loading" style="margin: 0 auto">
+    </mat-progress-spinner>
+    <br/>
+      <div style="text-align: center;
+                font-size: 32px;
+                color: rgb(51, 193, 91);">
+        Thomas ESCUDERO<br/>
+        <div style="text-align: center;
+                font-size: 22px;
+                color: rgba(49, 66, 216, 0.699);
+                margin-top: 15px;">
+            IT engineering student at ENSEEIHT<br/>
+        </div>
+    </div><br/><br/>
+  </div>
+    <div class="col-lg-8">
+      <div style="background-color: rgba(51, 193, 91, 0.541);
+                  vertical-align: middle;
+                  margin-left: 5px;
+                  margin-right: 5px; 
+                  color: white;
+                  padding: 5px 5px 5px 5px;
+                  min-height: 100%;
+                  border-radius: 15px;"><br/>
+          <div style="text-align: center; font-size: 22px;"><strong>About me</strong></div><br/>
+          <div style="border: 0.5px solid white;"></div><br/>
+          feneg je jeg ejg ejg ej ggejg jeg je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
+          ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
+          j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gj<br/><br>
+          feneg je jeg ejg ejg ej ggejg jeg je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
+          ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
+          j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gjfeneg je jeg ejg ejg ej ggejg jeg 
+          je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
+          ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
+          j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gj
+          feneg je jeg ejg ejg ej ggejg jeg je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
+          ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
+          j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gj
+      </div>
+    </div>
+</div>
+<br/><br/>
+<div class="row">
+  <div class="col-xl-5">
+    <img src="http://tescudero.fr/images/undraw_updated_resume_u4fy.svg" width="90%">
+  </div>
+  <div class="col-lg-2" style="text-align: center;">
+    <button style="margin-top: 15px;" mat-stroked-button
+     [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
+     matRipple [matRippleRadius]="60" 
+     [matRippleUnbounded]="true" matTooltip="Download my CV">View my CV</button>
+  </div>
+  <div class="col-xl-5">
+    <img src="http://tescudero.fr/images/undraw_Portfolio_re_qwm5.svg" width="90%">
+  </div>
 </div><br/><br/>
 
 <div class="row">
-    <div class="col-lg-8">
-        <div style="background-color: rgba(51, 193, 91, 0.541);
-                    min-width: 60%;
-                    margin-left: 5%;
-                    margin-right: auto;
-                    color: white;
-                    padding: 5px 5px 5px 5px;
-                    border-radius: 15px;">
-            <div style="text-align: center; font-size: 22px;"><strong>About me</strong></div><br/>
-            <div style="border: 0.5px solid white;"></div><br/>
-            feneg je jeg ejg ejg ej ggejg jeg je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
-            ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
-            j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gj<br/><br>
-            feneg je jeg ejg ejg ej ggejg jeg je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
-            ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
-            j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gjfeneg je jeg ejg ejg ej ggejg jeg 
-            je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
-            ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
-            j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gj
-            feneg je jeg ejg ejg ej ggejg jeg je ge gg e gejg ejg ekg ejejg ejgej gej gje gjeg je ge
-            ekg e gej gje gje gjeg eg ejg ejg ej gje ge gje gje je gje je gje gje gje jg ejg ejg ejg ejej
-            j j egjg ej j gjeg jegje gegegj j je gje gje gje jje ezignkj gjd gj
-        </div>
-    </div>
-    <div class="col-lg-4" style="text-align: center; margin-top: auto; margin-bottom: auto;">
-        <button mat-stroked-button>Download my full CV</button>
-    </div>
-</div>
-<br/>
-<div class="row">
-    <div class="col-lg-3">
+    <div class="col-xl-3" style="margin-top: 15px;text-align: center;">
         <mat-card class="example-card">
             <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
+              <div mat-card-avatar class="example-header-image-enseeiht"></div>
               <mat-card-title>ENSEEIHT</mat-card-title>
               <mat-card-subtitle>engineering school</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="http://tescudero.fr/images/enseeiht.jpg" alt="ENSEEIHT">
+            <img mat-card-image src="http://tescudero.fr/images/it_sciences.jpg" alt="ENSEEIHT">
             <mat-card-content>
               <p>
                 The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
@@ -83,14 +95,14 @@
           </mat-card>
           
     </div>
-    <div class="col-lg-3">
+    <div class="col-xl-3" style="margin-top: 15px; text-align: center;">
         <mat-card class="example-card">
             <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
+              <div mat-card-avatar class="example-header-image-chausson"></div>
               <mat-card-title>CHAUSSON matériaux</mat-card-title>
               <mat-card-subtitle>My apprenticeship like IBMi developer</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="http://tescudero.fr/images/enseeiht.jpg" alt="ENSEEIHT">
+            <img mat-card-image src="http://tescudero.fr/images/camion_toupie.jpg" alt="ENSEEIHT">
             <mat-card-content>
               <p>
                 The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
@@ -103,10 +115,10 @@
             </mat-card-actions>
           </mat-card>
     </div>
-    <div class="col-lg-3">
+    <div class="col-xl-3" style="margin-top: 15px;text-align: center;">
         <mat-card class="example-card">
             <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
+              <div mat-card-avatar class="example-header-image-english"></div>
               <mat-card-title>ENSEEIHT</mat-card-title>
               <mat-card-subtitle>engineering school</mat-card-subtitle>
             </mat-card-header>
@@ -123,14 +135,14 @@
             </mat-card-actions>
           </mat-card>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-3" style="margin-top: 15px;text-align: center;">
         <mat-card class="example-card">
             <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
+              <div mat-card-avatar class="example-header-image-sports"></div>
               <mat-card-title>ENSEEIHT</mat-card-title>
               <mat-card-subtitle>engineering school</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="http://tescudero.fr/images/enseeiht.jpg" alt="ENSEEIHT">
+            <img mat-card-image src="http://tescudero.fr/images/ventoux.jpeg" alt="ENSEEIHT">
             <mat-card-content>
               <p>
                 The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
@@ -144,6 +156,13 @@
           </mat-card>
     </div>
 </div>
+<br/>
+<div style="text-align: center;">
+  <h2>Video presentation</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/s2Aqef-c_eg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<br/>
+
 
 
     
