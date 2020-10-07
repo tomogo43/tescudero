@@ -21,7 +21,7 @@ export class EportfolioComponent implements OnInit {
       (getUrl) => {
         if (getUrl === '/eportfolio/home' || getUrl === '/eportfolio' ) {
           this.url = 'home';
-        } else if (getUrl === '/eportfolio/education') {
+        } else if (getUrl === '/eportfolio/education_R&T' || getUrl === '/eportfolio/education_N7') {
           this.url = 'education';
         } else if (getUrl === '/eportfolio/apprenticeship') {
           this.url = 'apprenticeship';
