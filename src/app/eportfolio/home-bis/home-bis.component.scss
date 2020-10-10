@@ -1,27 +1,38 @@
 .example-card {
     max-width: 400px;
-  }
+}
+
+.btn-view-cv {
+  background-color: rgba(51, 193, 91);
+  color: black;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.btn-view-interests:hover {
+  background-color: rgba(49, 66, 216, 0.699);
+}
   
-  .example-header-image-enseeiht {
-    background-image: url('http://tescudero.fr/images/graduate.jpg');
-    background-size: cover;
-  }
+.example-header-image-enseeiht {
+  background-image: url('http://tescudero.fr/images/graduate.jpg');
+  background-size: cover;
+}
 
-  .example-header-image-chausson {
-    background-image: url('http://tescudero.fr/images/worker.png');
-    background-size: cover;
-  }
-  .example-header-image-english {
-    background-image: url('http://tescudero.fr/images/drapeau_anglais.png');
-    background-size: cover;
-  }
-  .example-header-image-sports {
-    background-image: url('http://tescudero.fr/images/medaille.jpg');
-    background-size: cover;
-  }
+.example-header-image-chausson {
+  background-image: url('http://tescudero.fr/images/worker.png');
+  background-size: cover;
+}
+.example-header-image-english {
+  background-image: url('http://tescudero.fr/images/drapeau_anglais.png');
+  background-size: cover;
+}
+.example-header-image-sports {
+  background-image: url('http://tescudero.fr/images/medaille.jpg');
+  background-size: cover;
+}
 
-  h2 {
-    //color: rgb(49, 66, 216);
-    color: rgb(51, 193, 91);
-    font-size: 28px;
+h2 {
+  //color: rgb(49, 66, 216);
+  color: rgb(51, 193, 91);
+  font-size: 28px;
 }
