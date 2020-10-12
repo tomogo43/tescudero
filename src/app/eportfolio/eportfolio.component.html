@@ -21,10 +21,11 @@
         <button mat-menu-item (click)="changeComponent('eportfolio/professional-english')">Item 2</button>
         </mat-menu>
 
-        <button [ngClass]="{'btn-view-menu':true, 'btn-view-menu-active': url === 'sports'}" mat-button [matMenuTriggerFor]="beforeMenu5">Sports & Spare Simes</button>
+        <button [ngClass]="{'btn-view-menu':true, 'btn-view-menu-active': url === 'sports'}" mat-button [matMenuTriggerFor]="beforeMenu5">Sports & Spare Times</button>
         <mat-menu #beforeMenu5="matMenu" xPosition="before">
         <button mat-menu-item (click)="changeComponent('eportfolio/sports')">Running</button>
         <button mat-menu-item (click)="changeComponent('eportfolio/sports')">Cycling</button>
+        <button mat-menu-item (click)="changeComponent('eportfolio/sports')">Music</button>
         </mat-menu>
         <br/>
         <div style="border-bottom: 1px solid grey;"></div>
