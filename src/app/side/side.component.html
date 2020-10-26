@@ -14,7 +14,12 @@
     Curriculum-viatae
 </div>
 <div [ngClass]="{'selection disable-select': true,
-                'onSelection': position === '/eportfolio'}" (click)="changeComponent('eportfolio')" matRipple>
+                'onSelection': position === '/eportfolio' ||
+                               position === '/eportfolio/education_R&T' ||
+                               position === '/eportfolio/education_N7' ||
+                               position === '/eportfolio/apprenticeship' ||
+                               position === '/eportfolio/professional-english' ||
+                               position === '/eportfolio/sports'}" (click)="changeComponent('eportfolio')" matRipple>
     <fa-icon [icon]="faWallet"></fa-icon>
     eportfolio
 </div>

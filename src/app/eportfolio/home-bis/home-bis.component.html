@@ -43,11 +43,16 @@
                   border-radius: 15px;"><br/>
           <div style="text-align: center; font-size: 22px;"><strong>About me</strong></div><br/>
           <div style="border: 0.5px solid white;"></div><br/>
-          <strong>Self-introduction</strong><br/><br/>
+          <strong>Welcome to my eportfolio! Here you'll disscover all my projects and my interests</strong><br/><br/>
           <ul>
-            <li>present who you are on an academic, a professional, and a personal level</li><br/><br/>
-            <li>engage your audience</li><br/><br/>
-            <li>briefly explain the content and purpose of this ePortfolio</li><br/><br/>
+            <li>I was born on october 1999 in Le Puy en Velay (France), and I grew up in this same town where I've been 
+              graduated by a scientific A level and also by a aeronautic diploma (BIA) </li><br/><br/>
+            <li>I'm also graduated by a two years of technical degree in Network and Telecommunication of IUT de Roanne.
+              During this 2 years I learned a lot about communications tools and programming technologies, that gave me the desire to porsue
+              in IT engineering school at ENSEEIHT (Toulouse). Moreover I realise my apprenticeship as IBMi developer at CHAUSSON matériaux.
+            </li><br/><br/>
+            <li>swimming, biking and running which form an integral part of my life, like musics and series :)</li><br/>
+            <li>Now up to you to discover my eportfolio !</li><br/><br/>
           </ul>
       </div>
     </div>
@@ -58,7 +63,7 @@
     <img src="http://tescudero.fr/images/undraw_updated_resume_u4fy.svg" width="90%">
   </div>
   <div class="col-lg-2" style="text-align: center;">
-    <button class="btn-view-cv" style="margin-top: 15px;" mat-stroked-button
+    <button (click)="viewCV()" class="btn-view-cv" style="margin-top: 15px;" mat-stroked-button
      [matRippleColor]="'rgba(49, 66, 216, 0.225)'" 
      matRipple [matRippleRadius]="60" 
      [matRippleUnbounded]="true" matTooltip="Download my CV">View my CV</button>
@@ -80,13 +85,12 @@
             <img mat-card-image src="http://tescudero.fr/images/it_sciences.jpg" alt="ENSEEIHT">
             <mat-card-content>
               <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                I'm preparing an IT engineering diploma will give me abilities to work in any informatic company
+                as a developer or also in the field of networks and telecommunications.
               </p>
             </mat-card-content>
             <mat-card-actions>
-              <button class="btn-view-interests" mat-button>See education part</button>
+              <button class="btn-view-interests" mat-button (click)="changeComponent('education')">See education part</button>
             </mat-card-actions>
           </mat-card>
           
@@ -98,16 +102,15 @@
               <mat-card-title>CHAUSSON matériaux</mat-card-title>
               <mat-card-subtitle>My apprenticeship as IBMi developer</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="http://tescudero.fr/images/camion_toupie.jpg" alt="ENSEEIHT">
+            <img mat-card-image src="http://tescudero.fr/images/camion_toupie.jpg" alt="CHAUSSON">
             <mat-card-content>
               <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                CHAUSSON matériaux is a huge French company in distribution and retail of materials, I'm working at the informatic department
+                with IBMi developers on an IBM system.  
               </p>
             </mat-card-content>
             <mat-card-actions>
-              <button class="btn-view-interests" mat-button>See apprenticeship part</button>
+              <button class="btn-view-interests" mat-button (click)="changeComponent('apprenticeship')">See apprenticeship part</button>
             </mat-card-actions>
           </mat-card>
     </div>
@@ -118,16 +121,14 @@
               <mat-card-title>ENSEEIHT</mat-card-title>
               <mat-card-subtitle>engineering school</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="http://tescudero.fr/images/enseeiht.jpg" alt="ENSEEIHT">
+            <img mat-card-image src="http://tescudero.fr/images/enseeiht.jpg" alt="ENGLISH">
             <mat-card-content>
               <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                **TODO**
               </p>
             </mat-card-content>
             <mat-card-actions>
-              <button class="btn-view-interests" mat-button>See professional english part</button>
+              <button class="btn-view-interests" mat-button (click)="changeComponent('english')">See professional english part</button>
             </mat-card-actions>
           </mat-card>
     </div>
@@ -138,16 +139,14 @@
               <mat-card-title>Activities</mat-card-title>
               <mat-card-subtitle>sports, music...</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="http://tescudero.fr/images/ventoux.jpeg" alt="ENSEEIHT">
+            <img mat-card-image src="http://tescudero.fr/images/ventoux.jpeg" alt="ACTIVITIES">
             <mat-card-content>
               <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                In this section you'll can discover what I love to do (sports, musics, series...)
               </p>
             </mat-card-content>
             <mat-card-actions>
-              <button class="btn-view-interests" mat-button>See sports & spare times part</button>
+              <button class="btn-view-interests" mat-button (click)="changeComponent('activities')">See sports & spare times part</button>
             </mat-card-actions>
           </mat-card>
     </div>
@@ -155,7 +154,11 @@
 <br/>
 <div style="text-align: center;">
   <h2>Video presentation</h2>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/BFUIJsHH25M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <video controls width="75%">
+    <source src="http://tescudero.fr/videos/video_presentation.mp4"
+            type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+  </video>
 </div>
 <br/>
 
