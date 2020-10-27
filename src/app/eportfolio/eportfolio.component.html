@@ -9,17 +9,13 @@
         <button mat-menu-item (click)="changeComponent('eportfolio/education_N7')">ENSEEIHT</button>
         </mat-menu>
 
-        <button [ngClass]="{'btn-view-menu':true, 'btn-view-menu-active': url === 'apprenticeship'}" mat-button [matMenuTriggerFor]="beforeMenu3">Apprenticeship</button>
+        <button [ngClass]="{'btn-view-menu':true, 'btn-view-menu-active': url === 'apprenticeship'}" mat-button [matMenuTriggerFor]="beforeMenu3">Career, leadership & Management</button>
         <mat-menu #beforeMenu3="matMenu" xPosition="before">
         <button mat-menu-item (click)="changeComponent('eportfolio/apprenticeship')">Company presentation</button>
         <button mat-menu-item (click)="changeComponent('eportfolio/apprenticeship')">My missions</button>
         </mat-menu>
 
-        <button [ngClass]="{'btn-view-menu':true, 'btn-view-menu-active': url === 'professional-english'}" mat-button [matMenuTriggerFor]="beforeMenu4">Professional English</button>
-        <mat-menu #beforeMenu4="matMenu" xPosition="before">
-        <button mat-menu-item (click)="changeComponent('eportfolio/professional-english')">Item 1</button>
-        <button mat-menu-item (click)="changeComponent('eportfolio/professional-english')">Item 2</button>
-        </mat-menu>
+        <button (click)="changeComponent('eportfolio/professional-english')" [ngClass]="{'btn-view-menu':true, 'btn-view-menu-active': url === 'professional-english'}" mat-button >Professional English</button>
 
         <button [ngClass]="{'btn-view-menu':true, 'btn-view-menu-active': url === 'sports'}" mat-button [matMenuTriggerFor]="beforeMenu5">Sports & Spare Times</button>
         <mat-menu #beforeMenu5="matMenu" xPosition="before">
