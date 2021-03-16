@@ -57,6 +57,7 @@ import { ApprenticeshipComponent } from './eportfolio/apprenticeship/apprentices
 import { EducationComponent } from './eportfolio/education/education.component';
 import { ProfessionalEnglishComponent } from './eportfolio/professional-english/professional-english.component';
 import { SportsComponent } from './eportfolio/sports/sports.component';
+import { CLMComponent } from './eportfolio/clm/clm.component';
 
 
 const appRoutes : Routes = [
@@ -91,7 +92,8 @@ const appRoutes : Routes = [
     HomeBisComponent,
     ApprenticeshipComponent,
     ProfessionalEnglishComponent,
-    SportsComponent
+    SportsComponent,
+    CLMComponent
   ],
   imports: [
     BrowserModule,

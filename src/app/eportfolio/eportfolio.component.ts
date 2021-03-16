@@ -23,8 +23,8 @@ export class EportfolioComponent implements OnInit {
           this.url = 'home';
         } else if (getUrl === '/eportfolio/education_R&T' || getUrl === '/eportfolio/education_N7') {
           this.url = 'education';
-        } else if (getUrl === '/eportfolio/apprenticeship') {
-          this.url = 'apprenticeship';
+        } else if (getUrl === '/eportfolio/CLM') {
+          this.url = 'CLM';
         } else if (getUrl === '/eportfolio/professional-english') {
           this.url = 'professional-english';
         } else if (getUrl === '/eportfolio/sports') {

@@ -9,10 +9,11 @@
         <button mat-menu-item (click)="changeComponent('eportfolio/education_N7')">ENSEEIHT</button>
         </mat-menu>
 
-        <button [ngClass]="{'btn-view-menu':true, 'btn-view-menu-active': url === 'apprenticeship'}" mat-button [matMenuTriggerFor]="beforeMenu3">Career, leadership & Management</button>
+        <button [ngClass]="{'btn-view-menu':true, 'btn-view-menu-active': url === 'CLM'}" mat-button [matMenuTriggerFor]="beforeMenu3">Career, leadership & Management</button>
         <mat-menu #beforeMenu3="matMenu" xPosition="before">
-        <button mat-menu-item (click)="changeComponent('eportfolio/apprenticeship')">Company presentation</button>
-        <button mat-menu-item (click)="changeComponent('eportfolio/apprenticeship')">My missions</button>
+            <button mat-menu-item (click)="changeComponent('eportfolio/CLM')">CSR-Ethics Eval</button>
+        <button mat-menu-item (click)="changeComponent('eportfolio/CLM')">Company presentation</button>
+        <button mat-menu-item (click)="changeComponent('eportfolio/CLM')">My missions</button>
         </mat-menu>
 
         <button (click)="changeComponent('eportfolio/professional-english')" [ngClass]="{'btn-view-menu':true, 'btn-view-menu-active': url === 'professional-english'}" mat-button >Professional English</button>
@@ -30,6 +31,6 @@
 </div>
 <app-home-bis *ngIf="url==='home'"></app-home-bis>
 <app-education *ngIf="url==='education'"></app-education>
-<app-apprenticeship *ngIf="url==='apprenticeship'"></app-apprenticeship>
+<app-clm *ngIf="url==='CLM'"></app-clm>
 <app-professional-english *ngIf="url==='professional-english'"></app-professional-english>
 <app-sports *ngIf="url==='sports'"></app-sports>
