@@ -63,8 +63,8 @@ import { CLMComponent } from './eportfolio/clm/clm.component';
 const appRoutes : Routes = [
   { path : 'home', component: HomeComponent },
   { path : 'cv', component: CurriculumVitaeComponent },
-  { path : 'eportfolio', component: EportfolioComponent },
-  { path : 'eportfolio/:section', component: EportfolioComponent },
+  /*{ path : 'eportfolio', component: EportfolioComponent },
+  { path : 'eportfolio/:section', component: EportfolioComponent },*/
   { path : 'projects', component: ProjetsComponent },
   { path : 'posts', component: PostsComponent },
   { path : 'contact', component: ContactComponent },
